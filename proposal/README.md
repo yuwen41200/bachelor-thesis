@@ -49,7 +49,7 @@ Zhang et al., 2010
 * Facebook Graph API
 * Gephi: The Open Graph Visualization Platform
 
-## 參考資料 ##
+## 參考文獻 ##
 
 1. Larsson, A. O., & Moe, H. (2012). Studying political microblogging: Twitter users in the 2010 Swedish election campaign. New Media & Society, 14(5), 729-747.
 
