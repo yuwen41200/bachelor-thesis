@@ -1,7 +1,7 @@
 # Research Proposal #
 
-題目：即將公佈  
-Title: To Be Continued
+社群網站上之政治活動分析：以台灣 2016 年總統選舉為例  
+Analysis of Political Activities on Social Networking Sites: A Perspective from 2016 Taiwan Presidential Election
 
 學生：蒲郁文／指導教授：孫春在  
 Student: Yu-wen Pwu / Advisor: Prof. Chuen-tsai Sun
@@ -9,9 +9,18 @@ Student: Yu-wen Pwu / Advisor: Prof. Chuen-tsai Sun
 關鍵字：數位行動主義、社群媒體、社會網絡分析、政治參與、台灣政治  
 Keywords: Digital Activism, Social Media, Social Network Analysis, Political Participation, Politics of Taiwan
 
-## 緒論 ##
+## 研究目的 ##
 
-即將公佈。
+本研究採用量化分析，旨在探討：
+
+1. 哪些貼文最熱門？（最多人傳達心情／留言／分享）
+   留言／分享人數對時間的關係圖。
+2. 有多少比例的貼文／留言是負面宣傳（negative campaigning）？  
+   誰最常使用負面宣傳？
+3. 各發文者與其分享的連結之網絡圖。
+   特定族群是否會傾向於分享特定來源的資訊？
+4. 比較使用者於網路上對各政黨／候選人表達支持的人數與實際的選舉結果。
+   社群網站上的輿論反應出社會大眾意見的程度。
 
 ## 文獻回顧 ##
 
@@ -47,7 +56,12 @@ Zhang et al., 2010
 ## 研究方法 ##
 
 * Facebook Graph API
+
+  蒐集選舉期間各大政治性粉絲專頁的公開資料。
+
 * Gephi: The Open Graph Visualization Platform
+
+  進行社會網絡分析的視覺化。
 
 ## 參考文獻 ##
 
