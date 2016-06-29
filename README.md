@@ -1,7 +1,7 @@
 # Bachelor's Thesis #
 
-題目：即將公佈  
-Title: To Be Continued
+社群網站上之政治活動分析：以台灣 2016 年總統選舉為例  
+Analysis of Political Activities on Social Networking Sites: A Perspective from 2016 Taiwan Presidential Election
 
 學生：蒲郁文／指導教授：孫春在  
 Student: Yu-wen Pwu / Advisor: Prof. Chuen-tsai Sun
