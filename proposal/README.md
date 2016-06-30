@@ -39,7 +39,18 @@ Zhang et al., 2010
 
 * 摘要
   * 社群網站的使用與公民參與的提升呈現顯著的正相關。
-  * 討論政治議題有助於提升公民參與和政治參與。
+  * 討論政治議題有助於促進公民參與和政治參與。
+
+Hosch-Dayican et al., 2016
+
+* 摘要
+  * 相較於政治人物，平民更常使用負面宣傳（negative campaigning）。
+  * 透過質化內容分析（qualitative content analysis），發現大部份的推文都是在宣洩情緒與意見。
+
+Tzeng et al., 2014
+
+* 摘要
+  * 網路促成的公民運動，其規模差異可用三個要素來解釋：情緒蔓延因子、認知門檻障礙、技術門檻障礙。
 
 ## 研究方向 ##
 
@@ -47,7 +58,7 @@ Zhang et al., 2010
 
 1. 哪些貼文最熱門？（最多人傳達心情／留言／分享）  
    留言／分享人數對時間的關係圖。
-2. 有多少比例的貼文／留言是負面宣傳（negative campaigning）？  
+2. 有多少比例的貼文／留言是負面宣傳？  
    誰／什麼時候最常使用負面宣傳？
 3. 各發文者與其分享的連結之網絡圖。  
    特定族群是否會傾向於分享特定來源的資訊？
@@ -107,6 +118,6 @@ Zhang et al., 2010
 
    http://ssc.sagepub.com/content/34/2/135
 
-4. Tzeng, A., & Zhang, J. (2014). Internet-Facilitated Social Activism in Taiwan: Modes and Constraints. Paper presented at the XVIII ISA World Congress of Sociology, Yokohama.
+4. Tzeng, A., & Zhang, J. (2014). Internet-Facilitated Social Activism in Taiwan: Modes and Constraints. Paper presented at the XVIII ISA World Congress of Sociology, Yokohama, Japan.
 
    https://isaconf.confex.com/isaconf/wc2014/webprogram/Paper39547.html
