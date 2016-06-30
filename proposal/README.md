@@ -80,9 +80,17 @@ Zhang et al., 2010
 
   蒐集選舉期間各大政治性粉絲專頁之公開資料。
 
+* R: The R Project for Statistical Computing
+
+  進行資料之統計與繪圖。
+
 * Gephi: The Open Graph Visualization Platform
 
   進行社會網絡分析之視覺化。
+
+* 問卷調查
+
+  針對第二部份，設計問卷以調查使用者使用社群網站之習慣、張貼政治評論之動機等。
 
 ## 參考文獻 ##
 
