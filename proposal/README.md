@@ -6,7 +6,7 @@ Analysis of Political Activities on Social Networking Sites: A Perspective from 
 學生：蒲郁文／指導教授：孫春在  
 Student: Yu-wen Pwu / Advisor: Prof. Chuen-tsai Sun
 
-國立交通大學資訊工程學系
+國立交通大學資訊工程學系  
 Department of Computer Science, National Chiao Tung University, Taiwan
 
 關鍵字：數位行動主義、社群媒體、社會網絡分析、政治參與、台灣政治  
