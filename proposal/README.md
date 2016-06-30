@@ -38,7 +38,8 @@ Larsson and Moe, 2012
 Zhang et al., 2010
 
 * 摘要
-  * N/A
+  * 社群網站的使用與公民參與的提升呈現顯著的正相關。
+  * 討論政治議題有助於提升公民參與和政治參與。
 
 ## 研究方向 ##
 
@@ -106,6 +107,6 @@ Zhang et al., 2010
 
    http://ssc.sagepub.com/content/34/2/135
 
-4. Tzeng, A., & Zhang, J. (2014). Internet-Facilitated Social Activism in Taiwan: Modes and Constraints. XVIII ISA World Congress of Sociology.
+4. Tzeng, A., & Zhang, J. (2014). Internet-Facilitated Social Activism in Taiwan: Modes and Constraints. Paper presented at the XVIII ISA World Congress of Sociology, Yokohama.
 
    https://isaconf.confex.com/isaconf/wc2014/webprogram/Paper39547.html
