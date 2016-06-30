@@ -6,6 +6,9 @@ Analysis of Political Activities on Social Networking Sites: A Perspective from 
 學生：蒲郁文／指導教授：孫春在  
 Student: Yu-wen Pwu / Advisor: Prof. Chuen-tsai Sun
 
+國立交通大學資訊工程學系
+Department of Computer Science, National Chiao Tung University, Taiwan
+
 關鍵字：數位行動主義、社群媒體、社會網絡分析、政治參與、台灣政治  
 Keywords: Digital Activism, Social Media, Social Network Analysis, Political Participation, Politics of Taiwan
 
@@ -47,7 +50,7 @@ Hosch-Dayican et al., 2016
   * 相較於政治人物，平民更常使用負面宣傳（negative campaigning）。
   * 透過質化內容分析（qualitative content analysis），發現大部份的推文都是在宣洩情緒與意見。
 
-Tzeng et al., 2014
+Tzeng and Zhang, 2014
 
 * 摘要
   * 網路促成的公民運動，其規模差異可用三個要素來解釋：情緒蔓延因子、認知門檻障礙、技術門檻障礙。
