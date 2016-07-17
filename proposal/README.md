@@ -12,6 +12,34 @@ Department of Computer Science, National Chiao Tung University, Taiwan
 關鍵字：數位行動主義、社群媒體、社會網絡分析、政治參與、台灣政治  
 Keywords: Digital Activism, Social Media, Social Network Analysis, Political Participation, Politics of Taiwan
 
+## 緒論 ##
+
+常見對數位人文（digital humanities）的批評：
+
+* 只是用一些空洞的戲法來賣弄他們的研究能力，而沒有真正做出什麼新的分析。
+* 容易忽略種族、階級、性別、文化批判、意識型態等議題。
+* 傳統人文社會科學式微，數位人文研究卻獲得了愈來愈高的經費與聲望。
+* 研究者的背景不夠多元，其研究可能帶有某些偏見。
+
+常見對社會模擬（social simulation）的批評：
+
+* 將現實社會過度地簡化為一般化的法則。
+* 模擬的成果仰賴預先建立好的模型，難以發現新的法則。
+* 預先建立的模型往往充滿偏見。
+* 模擬的成果並不能反映出現實社會的情況。
+
+我的立場（一）傳統社會科學研究法仍是不可或缺的：
+
+* 並非所有問題都適合使用電腦來分析或模擬，有些現象無法被量化或歸納出一般化的法則。
+* 人文社會科學著重理解與詮釋，這部份的工作難以用電腦來取代。
+* 因此田野工作、民族誌、訪談等研究法仍有其彌足珍貴的價值。
+
+我的立場（二）然而資訊科技仍然能對人文學科做出顯著貢獻：
+
+* 數位人文提供了一個全新的面向來探究傳統上屬於人文社會科學領域的問題。
+* 資訊科技能幫助人文學者更有效率地獲得知識。
+* 資料探勘（data mining）、自然語言處理（NLP）等技術使一些過去被認為窒礙難行的研究成為可能。
+
 ## 文獻回顧 ##
 
 Larsson and Moe, 2012
@@ -95,7 +123,7 @@ Tzeng and Zhang, 2014
 
   蒐集選舉期間各大政治性粉絲專頁之公開資料。
 
-* R: The R Project for Statistical Computing
+* SciPy: Scientific Computing Tools for Python
 
   進行資料之統計與繪圖。
 
