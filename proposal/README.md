@@ -47,7 +47,7 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 ## 文獻回顧 ##
 
-從「洪仲丘事件」、「太陽花學運」到「反黑箱課綱運動」，網際網路均對這些社會運動的促成扮演了一個相當關鍵的角色。  
+從「洪仲丘事件」、「太陽花學運」到「反黑箱課綱運動」，網際網路均對社會運動的促成扮演了一個相當關鍵的角色。  
 這也吸引了許多社會學家、傳播學家、計算機科學家對台灣數位行動主義研究產生興趣。  
 儘管人們普遍同意數位行動主義能有效促進民主政治，這個趨勢仍然伴隨了一些潛在的隱憂。
 
@@ -109,15 +109,15 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 ## 研究方法 ##
 
-* 量化研究（quantitative research）
+* 量化研究（quantitative research）  
   作為一個資訊科學的研究計畫，比較適合採用量化研究。
-* Facebook Graph API
+* Facebook Graph API  
   蒐集選舉期間各大政治性粉絲專頁之公開資料。
-* SciPy: Scientific Computing Tools for Python
+* SciPy: Scientific Computing Tools for Python  
   進行資料之統計與繪圖。
-* Gephi: The Open Graph Visualization Platform
+* Gephi: The Open Graph Visualization Platform  
   進行社會網絡分析之視覺化。
-* 問卷調查
+* 問卷調查  
   針對第二部份，設計問卷以調查使用者使用社群網站之習慣、張貼政治評論之動機等。
 
 ## 研究方向 ##
