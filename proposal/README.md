@@ -22,7 +22,7 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 1. 只是用一些空洞的戲法來賣弄他們的研究能力，而沒有真正做出什麼新的分析。
 2. 容易忽略種族、階級、性別、文化、意識型態等議題。
-3. 現代社會中，一切都已經被商品化了，人文學科日漸式微。
+3. 現代社會中，一切都已經被商品化了，人文學科日漸式微。  
    但數位人文卻頂著科技的光環，而獲得了相當高的經費與聲望。
 4. 研究者的背景不夠多元，其研究可能帶有某些偏見。
 
@@ -47,7 +47,14 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 ## 文獻回顧 ##
 
-Larsson and Moe, 2012
+### 常見對數位行動主義（digital activism）的批評 ###
+
+1. 數位落差（digital divide）  
+   由於經濟、教育等差異，有些族群缺少機會接觸資訊科技，或者沒有能力使用資訊科技。
+2. 民粹主義（populism）  
+   網路本質上便具有民粹主義、安那其（anarchy）、去中心化（decentralization）等特性，網路輿論的素質可能偏低。
+
+### Larsson and Moe, 2012 ###
 
 * 摘要
   * 蒐集選舉期間含有特定 hashtag 的推文，進行社會網絡分析（SNA）。
@@ -71,19 +78,19 @@ Larsson and Moe, 2012
 * 問題
   * 如何區別真人用戶與機器用戶？
 
-Zhang et al., 2010
+### Zhang et al., 2010 ###
 
 * 摘要
   * 社群網站的使用與公民參與的提升呈現顯著的正相關。
   * 討論政治議題有助於促進公民參與和政治參與。
 
-Hosch-Dayican et al., 2016
+### Hosch-Dayican et al., 2016 ###
 
 * 摘要
   * 相較於政治人物，平民更常使用負面宣傳（negative campaigning）。
   * 透過質化內容分析（qualitative content analysis），發現大部份的推文都是在宣洩情緒與意見。
 
-Tzeng and Zhang, 2014
+### Tzeng and Zhang, 2014 ###
 
 * 摘要
   * 網路促成的公民運動，其規模差異可用三個要素來解釋：情緒蔓延因子、認知門檻障礙、技術門檻障礙。
