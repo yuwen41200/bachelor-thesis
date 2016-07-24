@@ -107,6 +107,19 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 * 摘要
   * 網路促成的公民運動，其規模差異可用三個要素來解釋：情緒蔓延因子、認知門檻障礙、技術門檻障礙。
 
+## 研究方法 ##
+
+* 量化研究（quantitative research）
+  作為一個資訊科學的研究計畫，比較適合採用量化研究。
+* Facebook Graph API
+  蒐集選舉期間各大政治性粉絲專頁之公開資料。
+* SciPy: Scientific Computing Tools for Python
+  進行資料之統計與繪圖。
+* Gephi: The Open Graph Visualization Platform
+  進行社會網絡分析之視覺化。
+* 問卷調查
+  針對第二部份，設計問卷以調查使用者使用社群網站之習慣、張貼政治評論之動機等。
+
 ## 研究方向 ##
 
 第一部份：可藉由已知的公開資料探討的議題
@@ -136,28 +149,6 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 2. 線上政治參與可能為台灣政治帶來哪些正面／負面影響？  
    非本次研究範圍，但因其具有研究價值，仍列入研究企畫。
-
-## 研究方法 ##
-
-* 量化研究（quantitative research）
-
-  作為一個資訊科學的研究計畫，比較適合採用量化研究。
-
-* Facebook Graph API
-
-  蒐集選舉期間各大政治性粉絲專頁之公開資料。
-
-* SciPy: Scientific Computing Tools for Python
-
-  進行資料之統計與繪圖。
-
-* Gephi: The Open Graph Visualization Platform
-
-  進行社會網絡分析之視覺化。
-
-* 問卷調查
-
-  針對第二部份，設計問卷以調查使用者使用社群網站之習慣、張貼政治評論之動機等。
 
 ## 參考文獻 ##
 
