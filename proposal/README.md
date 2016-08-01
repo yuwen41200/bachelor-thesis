@@ -99,8 +99,12 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 ### Hosch-Dayican et al., 2016 ###
 
 * 摘要
+  * 平民相當投入線上政治參與。
   * 相較於政治人物，平民更常使用負面宣傳（negative campaigning）。
-  * 透過質化內容分析（qualitative content analysis），發現大部份的推文都是在宣洩情緒與意見。
+  * 透過質化內容分析（qualitative content analysis），發現平民大部份的推文都是在宣洩情緒與意見。
+* 研究方法
+  * 資料蒐集：先選定數個 hashtag，再透過滾雪球抽樣（snowball sampling），找出其他相關的 hashtag。
+  * 資料清理：刪去誤判的推文，p. 7（未完）……
 
 ### Tzeng and Zhang, 2014 ###
 
