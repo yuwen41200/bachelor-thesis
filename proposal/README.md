@@ -110,9 +110,9 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 #### 研究方法 ####
 
-1. 資料蒐集  
+1. 資料蒐集（data collection）  
    先選定數個 hashtag，再透過滾雪球抽樣（snowball sampling），找出其他相關的 hashtag。蒐集選舉期間含有這些 hashtag 的推文。
-2. 資料清理  
+2. 資料清理（data cleaning）  
    接著，需刪去誤判的推文。先刪去語言與地區皆不符的推文，再從剩下的推文中篩選出直接與選舉有關的推文。
 3. 操作化（operationalization）  
    承上，先將推文分為「競選活動」與「非競選活動」兩種類型，再將屬於「競選活動」的推文分為「說服型競選（persuasive campaigning）」與「攻擊型競選（negative campaigning）」兩種類型。
