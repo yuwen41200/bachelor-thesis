@@ -68,7 +68,7 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 ### Larsson and Moe, 2012 ###
 
-* 摘要
+* 研究方法
   * 蒐集選舉期間含有特定 hashtag 的推文，進行社會網絡分析（SNA）。
 * 資料分析
   * 不同時間推文數量的變化。
@@ -98,13 +98,24 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 ### Hosch-Dayican et al., 2016 ###
 
-* 摘要
-  * 平民相當投入線上政治參與。
-  * 相較於政治人物，平民更常使用負面宣傳（negative campaigning）。
-  * 透過質化內容分析（qualitative content analysis），發現平民大部份的推文都是在宣洩情緒與意見。
 * 研究方法
-  * 資料蒐集：先選定數個 hashtag，再透過滾雪球抽樣（snowball sampling），找出其他相關的 hashtag。
-  * 資料清理：刪去誤判的推文，p. 7（未完）……
+  * 資料蒐集
+    * 先選定數個 hashtag，再透過滾雪球抽樣（snowball sampling），找出其他相關的 hashtag。
+    * 蒐集選舉期間含有這些 hashtag 的推文。
+  * 資料清理
+    * 刪去誤判的推文。
+    * 先刪去語言與地區皆不符的推文，再從剩下的推文中篩選出直接與選舉有關的推文。
+  * 操作化（operationalization）
+    * 承上，將推文分為「競選活動」與「非競選活動」兩種類型。
+    * 再將屬於「競選活動」的推文分為「說服型競選（persuasive campaigning）」與「攻擊型競選（negative campaigning）」兩種類型。
+  * 自動化內容分析（automated content analysis）
+    * 以上篩選與分類的過程仰賴質化內容分析（qualitative content analysis）。
+    * 採用監督式學習（supervised learning），先由研究者做一小部份的樣本，再用它來訓練機器。
+    * 具體作法包含單純貝氏分類器（naive Bayes classifier）、一元語法（unigram）／二元語法（bigram）、詞幹提取（stemming）、十等分交叉驗證（10-fold cross-validation）等等。
+* 資料解讀
+  * 平民相當投入線上政治活動。
+  * 相較於政治人物，平民更常使用攻擊型競選。
+  * 平民大部份的推文都是在宣洩情緒與意見。
 
 ### Tzeng and Zhang, 2014 ###
 
