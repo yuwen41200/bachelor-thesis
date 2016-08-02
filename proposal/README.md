@@ -22,7 +22,7 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 1. 只是用一些空洞的戲法來賣弄他們的研究能力，而沒有真正做出什麼新的分析。
 2. 容易忽略種族、階級、性別、文化、意識型態等議題。
-3. 現代社會中，一切都已經被商品化了，人文學科日漸式微。  
+3. 在這個一切都已經被商品化了的現代社會中，人文學科日漸式微。  
    但數位人文卻頂著科技的光環，而獲得了相當高的經費與聲望。
 4. 研究者的背景不夠多元，其研究可能帶有某些偏見。
 
@@ -47,8 +47,8 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 ## 文獻回顧 ##
 
-從「洪仲丘事件」、「太陽花學運」到「反黑箱課綱運動」，網際網路均對社會運動的促成扮演了一個相當關鍵的角色。  
-這也吸引了許多社會學家、傳播學家、計算機科學家對台灣數位行動主義研究產生興趣。  
+從洪仲丘事件、太陽花學運到反黑箱課綱運動，網際網路均對這些社會運動的促成扮演了相當關鍵的角色。  
+這也讓許多社會學家、傳播學家與計算機科學家開始對台灣的數位行動主義熱潮產生興趣。  
 儘管人們普遍同意數位行動主義能有效促進民主政治，這個趨勢仍然伴隨了一些潛在的隱憂。
 
 ### 常見對數位行動主義（digital activism）的批評 ###
@@ -98,24 +98,27 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 ### Hosch-Dayican et al., 2016 ###
 
-* 研究方法
-  * 資料蒐集
-    * 先選定數個 hashtag，再透過滾雪球抽樣（snowball sampling），找出其他相關的 hashtag。
-    * 蒐集選舉期間含有這些 hashtag 的推文。
-  * 資料清理
-    * 刪去誤判的推文。
-    * 先刪去語言與地區皆不符的推文，再從剩下的推文中篩選出直接與選舉有關的推文。
-  * 操作化（operationalization）
-    * 承上，將推文分為「競選活動」與「非競選活動」兩種類型。
-    * 再將屬於「競選活動」的推文分為「說服型競選（persuasive campaigning）」與「攻擊型競選（negative campaigning）」兩種類型。
-  * 自動化內容分析（automated content analysis）
-    * 以上篩選與分類的過程仰賴質化內容分析（qualitative content analysis）。
-    * 採用監督式學習（supervised learning），先由研究者做一小部份的樣本，再用它來訓練機器。
-    * 具體作法包含單純貝氏分類器（naive Bayes classifier）、一元語法（unigram）／二元語法（bigram）、詞幹提取（stemming）、十等分交叉驗證（10-fold cross-validation）等等。
-* 資料解讀
-  * 平民相當投入線上政治活動。
-  * 相較於政治人物，平民更常使用攻擊型競選。
-  * 平民大部份的推文都是在宣洩情緒與意見。
+#### 研究方法 ####
+
+1. 資料蒐集
+   * 先選定數個 hashtag，再透過滾雪球抽樣（snowball sampling），找出其他相關的 hashtag。
+   * 蒐集選舉期間含有這些 hashtag 的推文。
+2. 資料清理
+   * 接著，需刪去誤判的推文。
+   * 先刪去語言與地區皆不符的推文，再從剩下的推文中篩選出直接與選舉有關的推文。
+3. 操作化（operationalization）
+   * 承上，將推文分為「競選活動」與「非競選活動」兩種類型。
+   * 再將屬於「競選活動」的推文分為「說服型競選（persuasive campaigning）」與「攻擊型競選（negative campaigning）」兩種類型。
+4. 自動化內容分析（automated content analysis）
+   * 以上篩選與分類的過程仰賴質化內容分析（qualitative content analysis）。
+   * 採用監督式學習（supervised learning），先由研究者做一小部份的樣本，再用它來訓練機器。
+   * 具體作法包含單純貝氏分類器（naive Bayes classifier）、一元語法（unigram）／二元語法（bigram）、詞幹提取（stemming）、十等分交叉驗證（10-fold cross-validation）等等。
+
+#### 資料解讀 ####
+
+1. 平民相當投入線上政治活動。
+2. 相較於政治人物，平民更常使用攻擊型競選。
+3. 平民大部份的推文都是在宣洩情緒與意見。
 
 ### Tzeng and Zhang, 2014 ###
 
