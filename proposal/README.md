@@ -117,7 +117,7 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 3. 操作化（operationalization）  
    承上，先將推文分為「競選活動」與「非競選活動」兩種類型，再將屬於「競選活動」的推文分為「說服型競選（persuasive campaigning）」與「攻擊型競選（negative campaigning）」兩種類型。
 4. 自動化內容分析（automated content analysis）  
-   以上篩選與分類的過程仰賴質化內容分析（qualitative content analysis）。採用監督式學習（supervised learning），先由研究者做一小部份的樣本，再用它來訓練機器。具體作法包含單純貝氏分類器（naive Bayes classifier）、一元語法（unigram）／二元語法（bigram）、   詞幹提取（stemming）、十等分交叉驗證（10-fold cross-validation）等等。
+   以上篩選與分類的過程仰賴質化內容分析（qualitative content analysis）。採用監督式學習（supervised learning），先由研究者做一小部份的樣本，再用它來訓練機器。具體作法包含單純貝氏分類器（naive Bayes classifier）、一元語法（unigram）與二元語法（bigram）、詞幹提取（stemming）、十等分交叉驗證（10-fold cross-validation）等等。
 
 #### 資料解讀 ####
 
