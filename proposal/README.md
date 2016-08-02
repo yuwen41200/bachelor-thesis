@@ -118,11 +118,13 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
    先刪去語言與地區皆不符的推文，再從剩下的推文中篩選出直接與選舉有關的推文。
 3. 操作化（operationalization）  
    承上，將推文分為「競選活動」與「非競選活動」兩種類型。  
-   再將屬於「競選活動」的推文分為「說服型競選（persuasive campaigning）」與「攻擊型競選（negative campaigning）」兩種類型。
+   再將屬於「競選活動」的推文分為「說服型競選（persuasive campaigning）」  
+   與「攻擊型競選（negative campaigning）」兩種類型。
 4. 自動化內容分析（automated content analysis）  
    以上篩選與分類的過程仰賴質化內容分析（qualitative content analysis）。  
    採用監督式學習（supervised learning），先由研究者做一小部份的樣本，再用它來訓練機器。  
-   具體作法包含單純貝氏分類器（naive Bayes classifier）、一元語法（unigram）／二元語法（bigram）、詞幹提取（stemming）、十等分交叉驗證（10-fold cross-validation）等等。
+   具體作法包含單純貝氏分類器（naive Bayes classifier）、一元語法（unigram）／二元語法（bigram）、  
+   詞幹提取（stemming）、十等分交叉驗證（10-fold cross-validation）等等。
 
 #### 資料解讀 ####
 
@@ -140,30 +142,30 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 採用量化研究（quantitative research），以下提出一些可行的作法。
 
-### 資料蒐集 ###
+### 資料蒐集（data collection） ###
 
 Facebook Graph API  
 蒐集選舉期間各大政治性粉絲專頁之公開資料。  
 需注意蒐集的行為是否符合 Facebook 的使用條款（terms of use）。
 
-### 資料探勘 ###
+### 資料探勘（data mining） ###
 
 N/A
 
-### 統計 ###
+### 統計學（statistics） ###
 
 SciPy: Scientific Computing Tools for Python  
 進行資料之統計與繪圖。
 
-### 語意網絡 ###
+### 語意網（semantic web） ###
 
 N/A
 
-### 社會網絡分析 ###
+### 社會網絡分析（social network analysis） ###
 
 N/A
 
-### 資料視覺化 ###
+### 資料視覺化（data visualization） ###
 
 Gephi: The Open Graph Visualization Platform  
 進行社會網絡分析之視覺化。
