@@ -64,7 +64,8 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 5. 網路巴爾幹化（cyberbalkanization）  
    由於商業壟斷、政治審查、或是個人不願意接觸與自己立場相左的訊息等因素，使網際網路逐漸分裂、解體。
 
-我挑選了數篇國內外的相關論文，作為這份研究的參考資料。
+我挑選了數篇國內外的相關論文，作為這份研究的參考資料。  
+「延伸思考」是我讀完該論文後想到的問題。
 
 ### Larsson and Moe, 2012 ###
 
