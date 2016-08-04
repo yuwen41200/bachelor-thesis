@@ -122,8 +122,9 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 4. 自動化內容分析（automated content analysis）  
    以上篩選與分類的過程仰賴質化內容分析（qualitative content analysis）。  
    採用監督式學習（supervised learning），先由研究者做一小部份的樣本，再用它來訓練機器。  
-   具體作法包含單純貝氏分類器（naive Bayes classifier）、一元語法（unigram）與二元語法（bigram）、  
-   詞幹提取（stemming）、十等分交叉驗證（10-fold cross-validation）等等。
+   具體作法包含克氏 α 係數（Krippendorff's alpha）、單純貝氏分類器（naive Bayes classifier）、  
+   一元語法（unigram）與二元語法（bigram）、詞幹提取（stemming）、十等分交叉驗證  
+   （10-fold cross-validation）等等。
 
 #### 資料分析 ####
 
@@ -154,7 +155,8 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 #### 延伸思考 ####
 
 1. 這份研究只有區別政治菁英與平民，忽略了使用者間的其他差異（例如社會經濟背景）。
-2. 台灣的使用者是否也具有如此高的素養，僅將近 20% 的網路貼文被歸類為攻擊型競選？
+2. 採用監督式學習能降低解讀反諷文章的錯誤率到什麼程度？
+3. 台灣的使用者是否也具有如此高的素養，僅將近 20% 的網路貼文被歸類為攻擊型競選？
 
 ### Tzeng and Zhang, 2014 ###
 
