@@ -109,10 +109,12 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 2. 影響個人的政治態度與行為的因子有：政治興趣（political interest）、政治效能（political efficacy）、  
    政治信任（political trust）、政黨認同（party identification）。
 
-#### 摘要 ####
+#### 資料解讀 ####
 
-1. 社群網站的使用與公民參與的提升呈現顯著的正相關。
-2. 討論政治議題有助於促進公民參與和政治參與。
+1. 社群網站的使用與公民參與的提升呈現顯著的正相關，與政治參與、對政府的信任則無明顯關連。
+2. 討論政治議題有助於促進公民參與和政治參與，無助於提升對政府的信任。
+3. 教育程度愈高，愈有可能參與公民活動和政治活動，但對政府的信任卻愈低。
+4. 然而，政治效能感較高者，其政治信任感也較高。
 
 ### Hosch-Dayican et al., 2016 ###
 
