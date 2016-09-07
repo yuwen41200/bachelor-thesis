@@ -111,12 +111,14 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 #### 研究方法 ####
 
-1. 採用電話調查，應變數（dependent variable）為，自變數（independent variable）為，控制變數（control variable）為。
+1. 採用電話調查，應變數（dependent variable）為政治參與、公民參與、對政府的信任，  
+   自變數（independent variable）為社群網站之依賴、政治之人際討論，  
+   控制變數（control variable）為政治效能、意識形態、政治興趣、年齡、性別、種族、教育程度。
 2. 最後，進行階層式迴歸分析（hierarchical regression analysis）。
 
 #### 資料解讀 ####
 
-1. 社群網站的使用與公民參與的提升呈現顯著的正相關，與政治參與、對政府的信任則無明顯關連。
+1. 社群網站的使用與公民參與的提升呈現顯著的正相關，與政治參與、對政府的信任則無明顯關聯。
 2. 討論政治議題有助於促進公民參與和政治參與，無助於提升對政府的信任。
 3. 教育程度愈高，愈有可能參與公民活動和政治活動，但對政府的信任卻愈低。
 4. 然而，政治效能感較高者，其政治信任感也較高。
