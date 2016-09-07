@@ -104,8 +104,10 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 #### 既有理論 ####
 
-1. 社會資本（social capital）、大眾媒體（mass media）、人際討論（interpersonal discussion）、社群網站（SNS）都會決定公民參與和政治參與的情況。
-2. 影響個人的政治態度與行為的因子有：政治興趣（political interest）、政治效能（political efficacy）、政治信任（political trust）、政黨認同（party identification）。
+1. 社會資本（social capital）、大眾媒體（mass media）、人際討論（interpersonal discussion）、  
+   社群網站（SNS）都會決定公民參與和政治參與的狀況。
+2. 影響個人的政治態度與行為的因子有：政治興趣（political interest）、政治效能（political efficacy）、  
+   政治信任（political trust）、政黨認同（party identification）。
 
 #### 摘要 ####
 
