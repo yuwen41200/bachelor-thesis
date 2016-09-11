@@ -195,28 +195,22 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 採用量化研究（quantitative research），以下提出一些可行的作法。
 
-### 資料蒐集（data collection） ###
+### 資料探勘（data mining） ###
 
 Facebook Graph API  
 蒐集選舉期間各大政治性粉絲專頁之公開資料。  
 需注意蒐集的行為是否符合 Facebook 的使用條款（terms of use）。
-
-### 資料探勘（data mining） ###
-
-N/A
 
 ### 統計學（statistics） ###
 
 SciPy: Scientific Computing Tools for Python  
 進行資料之統計與繪圖。
 
-### 語意網（semantic web） ###
+### 自然語言處理（natural language processing） ###
 
-N/A
-
-### 社會網絡分析（social network analysis） ###
-
-N/A
+SnowNLP: Simplified Chinese Text Processing  
+針對中文的文本處理函式庫。  
+可以搭配 NTU Sentiment Dictionary 及中央研究院現代漢語平衡語料庫，提高精確度。
 
 ### 資料視覺化（data visualization） ###
 
