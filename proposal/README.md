@@ -198,7 +198,7 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 ### 資料探勘（data mining） ###
 
 Facebook Graph API  
-蒐集選舉期間各大政治性粉絲專頁之公開資料。  
+蒐集選舉期間各大政治性粉絲專頁之公開資料。（可參考 Socialbakers 提供之社群媒體統計）  
 需注意蒐集的行為是否符合 Facebook 的使用條款（terms of use）。
 
 ### 統計學（statistics） ###
@@ -209,8 +209,8 @@ SciPy: Scientific Computing Tools for Python
 ### 自然語言處理（natural language processing） ###
 
 SnowNLP: Simplified Chinese Text Processing  
-針對中文的文本處理函式庫。  
-可以搭配 NTU Sentiment Dictionary 及中央研究院現代漢語平衡語料庫，提高精確度。
+針對中文的文本處理函式庫，惟其訓練資料僅包含簡體中文文本。  
+應搭配 NTU Sentiment Dictionary 及中央研究院現代漢語平衡語料庫，提高精確度。
 
 ### 資料視覺化（data visualization） ###
 
