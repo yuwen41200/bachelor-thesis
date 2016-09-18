@@ -212,6 +212,9 @@ SnowNLP: Simplified Chinese Text Processing
 針對中文的文本處理函式庫，惟其訓練資料僅包含簡體中文文本。  
 應搭配 NTU Sentiment Dictionary 及中央研究院現代漢語平衡語料庫，提高精確度。
 
+"Jieba" Chinese Text Segmentation  
+Python 中文分詞模組，其精確度勝過 SnowNLP。
+
 ### 資料視覺化（data visualization） ###
 
 Gephi: The Open Graph Visualization Platform  
