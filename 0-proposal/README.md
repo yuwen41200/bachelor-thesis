@@ -198,7 +198,8 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 ### 資料探勘（data mining） ###
 
 Facebook Graph API  
-蒐集選舉期間各大政治性粉絲專頁之公開資料。（可參考 Socialbakers 提供之社群媒體統計）  
+蒐集選舉期間（投票日前三個月至投票日止）各大政治性粉絲專頁之公開資料。  
+可參考 Socialbakers 提供之社群媒體統計數據，決定欲蒐集的粉絲專頁清單。  
 需注意蒐集的行為是否符合 Facebook 的使用條款（terms of use）。
 
 ### 統計學（statistics） ###
@@ -222,10 +223,10 @@ Gephi: The Open Graph Visualization Platform
 
 ## 研究問題 ##
 
-1. 哪些貼文最熱門？（最多人傳達心情／留言／分享）  
-   留言／分享人數對時間的關係圖。
-2. 有多少比例的貼文／留言是攻擊型競選？  
-   誰／什麼時候最常使用攻擊型競選？
+1. 貼文數量對時間的關係圖。  
+   每個時間區間最熱門的關鍵字分別是哪些？
+2. 有多少比例的貼文是攻擊型競選？  
+   哪些政黨／候選人、什麼時候最常使用攻擊型競選？
 3. 各發文者與其分享的連結之網絡圖。  
    特定族群是否會傾向於分享特定來源的資訊？
 4. 比較使用者於網路上對各政黨／候選人表達支持的人數與實際的選舉結果。  
