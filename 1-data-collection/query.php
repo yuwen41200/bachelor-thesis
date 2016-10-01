@@ -10,8 +10,9 @@ $targetList = unserialize($unserialized);
 
 // destroy these before making the source code public
 $secretKey = '3a9c3467214697db53d6ff29a96f52d7';
-$accessToken = 'EAARZCIAZCAqZA4BAKqTcW8RUkJOgaEIrOrS22UMzXiqZCM95OLTa1mrmxhzPd2ZCTwfWBDD4fYPgbFJZBZCl37iLxDtjjWZBbTxS'.
-               '61mxsL5VGrZAwRG1fMQZCES3mQi3uyhcsQwFUIs3wjZBdxbCm5CDsVIahpFfzreIgPNhWdTsaWludJuKsg0j1eMNNrGdD3e2uYZD';
+$accessToken = 'EAARZCIAZCAqZA4BAKqTcW8RUkJOgaEIrOrS22UMzXiqZCM95OLTa1mrmxhzPd2ZCTwfWBD'.
+               'D4fYPgbFJZBZCl37iLxDtjjWZBbTxS61mxsL5VGrZAwRG1fMQZCES3mQi3uyhcsQwFUIs3w'.
+               'jZBdxbCm5CDsVIahpFfzreIgPNhWdTsaWludJuKsg0j1eMNNrGdD3e2uYZD';
 
 $fb = new SafeFacebook\SafeFacebook([
 	'app_id' => '1265675586808222',
