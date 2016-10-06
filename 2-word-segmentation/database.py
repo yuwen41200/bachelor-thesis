@@ -5,8 +5,12 @@ import json
 import os
 
 import dateutil.parser
+from ckipclient import CKIPClient
 
 from models import *
+from secret import *
+
+ckip = CKIPClient(CKIP_IP, CKIP_PORT, CKIP_USERNAME, CKIP_PASSWORD)
 
 
 def read():
@@ -35,8 +39,8 @@ def read():
 
 
 def segment(message):
-    pass
-    return 'return segmentation of ' + message
+    results = ckip.segment(message, pos=False)
+    return ' '.join(word for sentence in results for word in sentence)
 
 
 def insert():
@@ -48,5 +52,5 @@ def insert():
         print('"' + pid + '" inserted')
 
 if __name__ == '__main__':
-    db.drop_tables([Post, Keyword, Sentiment], safe=True)
+    # db.drop_tables([Post, Keyword, Sentiment], safe=True)
     insert()
