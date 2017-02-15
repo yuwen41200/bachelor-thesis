@@ -19,9 +19,9 @@ class Post(Model):
 
 class Keyword(Model):
     pid = ForeignKeyField(Post, related_name='keywords')
-    rank1 = CharField()
-    rank2 = CharField()
-    rank3 = CharField()
+    rank1 = CharField(null=True)
+    rank2 = CharField(null=True)
+    rank3 = CharField(null=True)
 
     class Meta:
         database = db
