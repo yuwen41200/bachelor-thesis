@@ -185,11 +185,11 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 2. 採用監督式學習能降低解讀反諷文章的錯誤率到什麼程度？
 3. 台灣的使用者是否也具有如此高的素養，僅將近 20% 的網路貼文被歸類為攻擊型競選？
 
-### Tzeng and Zhang, 2014 ###
+### ~~Tzeng and Zhang, 2014~~ ###
 
-#### 摘要 ####
+#### ~~摘要~~ ####
 
-1. 網路促成的公民運動，其規模差異可用三個要素來解釋：情緒蔓延因子、認知門檻障礙、技術門檻障礙。
+1. ~~網路促成的公民運動，其規模差異可用三個要素來解釋：情緒蔓延因子、認知門檻障礙、技術門檻障礙。~~
 
 ## 研究方法 ##
 
@@ -213,8 +213,8 @@ SnowNLP: Simplified Chinese Text Processing
 針對中文的文本處理函式庫，惟其訓練資料僅包含簡體中文文本。  
 應搭配 NTU Sentiment Dictionary 及中央研究院現代漢語平衡語料庫，提高精確度。
 
-"Jieba" Chinese Text Segmentation  
-Python 中文分詞模組，其精確度勝過 SnowNLP。
+~~"Jieba" Chinese Text Segmentation~~  
+~~Python 中文分詞模組，其精確度勝過 SnowNLP。~~
 
 ### 資料視覺化（data visualization） ###
 
@@ -245,7 +245,7 @@ Gephi: The Open Graph Visualization Platform
    -> 強化對立並製造出擁有人數優勢的假象。  
    -> 使用者對自己的立場更加堅定。  
    -> 缺少機會傾聽反對者的想法，人們意見更加分歧，難以達成共識。
-2. 線上政治參與可能為台灣政治帶來哪些正面／負面影響？  
+2. 線上政治參與可能為台灣政治帶來哪些正面／負面影響？
 
 要回答這些問題，可能還需搭配問卷調查等方法。  
 設計問卷以調查使用者使用社群網站之習慣、張貼政治評論之動機等。
@@ -255,4 +255,4 @@ Gephi: The Open Graph Visualization Platform
 1. Larsson, A. O., & Moe, H. (2012). Studying political microblogging: Twitter users in the 2010 Swedish election campaign. New Media & Society, 14(5), 729-747.
 2. Zhang, W., Johnson, T. J., Seltzer, T., & Bichard, S. L. (2010). The Revolution Will be Networked: The Influence of Social Networking Sites on Political Attitudes and Behavior. Social Science Computer Review, 28(1), 75-92.
 3. Hosch-Dayican, B., Amrit, C., Aarts, K., & Dassen, A. (2016). How Do Online Citizens Persuade Fellow Voters? Using Twitter During the 2012 Dutch Parliamentary Election Campaign. Social Science Computer Review, 34(2), 135-152.
-4. Tzeng, A., & Zhang, J. (2014). Internet-Facilitated Social Activism in Taiwan: Modes and Constraints. Paper presented at the XVIII ISA World Congress of Sociology, Yokohama, Japan.
+4. ~~Tzeng, A., & Zhang, J. (2014). Internet-Facilitated Social Activism in Taiwan: Modes and Constraints. Paper presented at the XVIII ISA World Congress of Sociology, Yokohama, Japan.~~
