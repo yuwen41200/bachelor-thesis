@@ -39,6 +39,7 @@ def read():
 
 
 def segment(message):
+    message = message.replace('\n', '。')
     results = ckip.segment(message, pos=False)
     sentences = []
     for sentence in results:
