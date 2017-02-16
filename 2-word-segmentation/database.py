@@ -8,7 +8,7 @@ import dateutil.parser
 from ckipclient import CKIPClient
 
 from models import *
-from secret import *
+from config import *
 
 ckip = CKIPClient(CKIP_IP, CKIP_PORT, CKIP_USERNAME, CKIP_PASSWORD)
 
@@ -40,7 +40,10 @@ def read():
 
 def segment(message):
     results = ckip.segment(message, pos=False)
-    return ' '.join(word for sentence in results for word in sentence)
+    sentences = []
+    for sentence in results:
+        sentences.append(' '.join(word for word in sentence))
+    return '\t'.join(sentences)
 
 
 def insert():
