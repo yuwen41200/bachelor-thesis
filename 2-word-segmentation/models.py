@@ -29,7 +29,8 @@ class Keyword(Model):
 
 class Sentiment(Model):
     pid = ForeignKeyField(Post, related_name='sentiments')
-    score = DoubleField()
+    auto_tag = CharField()
+    manual_tag = CharField(null=True)
 
     class Meta:
         database = db
