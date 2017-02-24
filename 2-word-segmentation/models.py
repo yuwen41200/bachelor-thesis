@@ -29,7 +29,7 @@ class Keyword(Model):
 
 class Sentiment(Model):
     pid = ForeignKeyField(Post, related_name='sentiments')
-    auto_tag = CharField()
+    auto_tag = CharField(null=True)
     manual_tag = CharField(null=True)
 
     class Meta:

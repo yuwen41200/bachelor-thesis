@@ -55,13 +55,19 @@ import random
 from models import *
 
 
+class AutoviviDict(dict):
+    def __missing__(self, key):
+        value = self[key] = type(self)()
+        return value
+
+
 class NaiveBayes:
 
     def __init__(self):
         self.classes = {}
         self.vocs = {}
         self.prior = {}
-        self.condprob = {}
+        self.condprob = AutoviviDict()
 
     def train(self, classes, docs):
         self.classes = classes
@@ -100,7 +106,7 @@ def init():
         post = Post.get(Post.id == random_post)
         if post.message:
             training_posts.append(post.id)
-    print('Training posts are: ' + ', '.join(training_posts), end='')
+    print('Training posts are: ' + ', '.join(map(lambda x: str(x), training_posts)), end='')
     print(' (' + str(training_post_count) + '/' + str(post_count) + ')')
 
 
