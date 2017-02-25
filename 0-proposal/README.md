@@ -4,13 +4,13 @@
 Analysis of Political Activities on Social Networking Sites: A Perspective from 2016 Taiwan Presidential Election
 
 學生：蒲郁文／指導教授：孫春在  
-Student: Yu-wen Pwu / Advisor: Prof. Chuen-tsai Sun
+Student: Yu-wen Pwu / Adviser: Prof. Chuen-tsai Sun
 
 國立交通大學資訊工程學系  
 Department of Computer Science, National Chiao Tung University, Taiwan
 
-關鍵字：數位行動主義、社群媒體、社會網絡分析、政治參與、台灣政治  
-Keywords: Digital Activism, Social Media, Social Network Analysis, Political Participation, Politics of Taiwan
+關鍵字：社群媒體、自動化內容分析、社會網絡分析、數位行動主義、政治參與  
+Keywords: Social Media, Automated Content Analysis, Social Network Analysis, Digital Activism, Political Participation
 
 ## 研究原則 ##
 
@@ -185,12 +185,6 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 2. 採用監督式學習能降低解讀反諷文章的錯誤率到什麼程度？
 3. 台灣的使用者是否也具有如此高的素養，僅將近 20% 的網路貼文被歸類為攻擊型競選？
 
-### ~~Tzeng and Zhang, 2014~~ ###
-
-#### ~~摘要~~ ####
-
-1. ~~網路促成的公民運動，其規模差異可用三個要素來解釋：情緒蔓延因子、認知門檻障礙、技術門檻障礙。~~
-
 ## 研究方法 ##
 
 採用量化研究（quantitative research），以下提出一些可行的作法。
@@ -199,8 +193,7 @@ Keywords: Digital Activism, Social Media, Social Network Analysis, Political Par
 
 Facebook Graph API  
 蒐集選舉期間（投票日前三個月至投票日止）各大政治性粉絲專頁之公開資料。  
-可參考 Socialbakers 提供之社群媒體統計數據，決定欲蒐集的粉絲專頁清單。  
-需注意蒐集的行為是否符合 Facebook 的使用條款（terms of use）。
+可參考 Socialbakers 提供之社群媒體統計數據，決定欲蒐集的粉絲專頁清單。
 
 ### 統計學（statistics） ###
 
@@ -211,10 +204,7 @@ SciPy: Scientific Computing Tools for Python
 
 SnowNLP: Simplified Chinese Text Processing  
 針對中文的文本處理函式庫，惟其訓練資料僅包含簡體中文文本。  
-應搭配 NTU Sentiment Dictionary 及中央研究院現代漢語平衡語料庫，提高精確度。
-
-~~"Jieba" Chinese Text Segmentation~~  
-~~Python 中文分詞模組，其精確度勝過 SnowNLP。~~
+應搭配中央研究院中文斷詞系統及自行開發之情感分析程式，提高精確度。
 
 ### 資料視覺化（data visualization） ###
 
@@ -224,18 +214,19 @@ Gephi: The Open Graph Visualization Platform
 ## 研究問題 ##
 
 1. 貼文數量對時間的關係圖。  
-   每個時間區間最熱門的關鍵字分別是哪些？  
-   嘗試透過關鍵字分析，找出各政黨／侯選人最重視的議題。
-2. 有多少比例的貼文是攻擊型競選？  
-   哪些政黨／候選人、什麼時候最常使用攻擊型競選？
-3. 各發文者與其分享的貼文的來源之網絡圖。  
+   各政黨／侯選人／意見領袖的貼文數量。
+2. 每個時間區間最熱門的關鍵字分別是哪些？  
+   嘗試透過關鍵字分析，找出各政黨／侯選人／意見領袖最重視的議題。
+3. 有多少比例的貼文是攻擊型競選？  
+   哪些政黨／候選人／意見領袖、什麼時候最常使用攻擊型競選？
+4. 各發文者與其分享的貼文的來源之網絡圖。  
    特定族群是否會傾向於分享特定來源的資訊？
-4. ~~比較使用者於網路上對各政黨／候選人表達支持的人數與實際的選舉結果。~~  
-   ~~社群網站上的輿論反應出社會大眾意見的程度。~~
 
 ## 後續研究 ##
 
-1. 社會大眾意見極化之現象是否存在？該如何理解？  
+1. 比較使用者於網路上對各政黨／候選人／意見領袖表達支持的人數與實際的選舉結果。  
+   社群網站上的輿論反應出社會大眾意見的程度。
+2. 社會大眾意見極化之現象是否存在？該如何理解？  
    以下是我的推論：  
    a. 有愈來愈多人使用社群媒體來接收政治新聞。  
    b. 台灣許多發佈政治新聞的粉絲專頁都有很鮮明的意識型態，報導內容也相當偏頗。  
@@ -245,7 +236,7 @@ Gephi: The Open Graph Visualization Platform
    -> 強化對立並製造出擁有人數優勢的假象。  
    -> 使用者對自己的立場更加堅定。  
    -> 缺少機會傾聽反對者的想法，人們意見更加分歧，難以達成共識。
-2. 線上政治參與可能為台灣政治帶來哪些正面／負面影響？
+3. 線上政治參與可能為台灣政治帶來哪些正面／負面影響？
 
 要回答這些問題，可能還需搭配問卷調查等方法。  
 設計問卷以調查使用者使用社群網站之習慣、張貼政治評論之動機等。
@@ -255,4 +246,3 @@ Gephi: The Open Graph Visualization Platform
 1. Larsson, A. O., & Moe, H. (2012). Studying political microblogging: Twitter users in the 2010 Swedish election campaign. New Media & Society, 14(5), 729-747.
 2. Zhang, W., Johnson, T. J., Seltzer, T., & Bichard, S. L. (2010). The Revolution Will be Networked: The Influence of Social Networking Sites on Political Attitudes and Behavior. Social Science Computer Review, 28(1), 75-92.
 3. Hosch-Dayican, B., Amrit, C., Aarts, K., & Dassen, A. (2016). How Do Online Citizens Persuade Fellow Voters? Using Twitter During the 2012 Dutch Parliamentary Election Campaign. Social Science Computer Review, 34(2), 135-152.
-4. ~~Tzeng, A., & Zhang, J. (2014). Internet-Facilitated Social Activism in Taiwan: Modes and Constraints. Paper presented at the XVIII ISA World Congress of Sociology, Yokohama, Japan.~~
