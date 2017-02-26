@@ -4,13 +4,13 @@
 Analysis of Political Activities on Social Networking Sites: A Perspective from 2016 Taiwan Presidential Election
 
 學生：蒲郁文／指導教授：孫春在  
-Student: Yu-wen Pwu / Advisor: Prof. Chuen-tsai Sun
+Student: Yu-wen Pwu / Adviser: Prof. Chuen-tsai Sun
 
 國立交通大學資訊工程學系  
 Department of Computer Science, National Chiao Tung University, Taiwan
 
-關鍵字：數位行動主義、社群媒體、社會網絡分析、政治參與、台灣政治  
-Keywords: Digital Activism, Social Media, Social Network Analysis, Political Participation, Politics of Taiwan
+關鍵字：社群媒體、自動化內容分析、社會網絡分析、數位行動主義、政治參與  
+Keywords: Social Media, Automated Content Analysis, Social Network Analysis, Digital Activism, Political Participation
 
 ## Copyright Notice ##
 
