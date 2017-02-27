@@ -11,6 +11,16 @@ from models import *
 from config import *
 
 ckip = CKIPClient(CKIP_IP, CKIP_PORT, CKIP_USERNAME, CKIP_PASSWORD)
+ignored_posts = []
+
+
+def ignore():
+    with open('segmentation.log') as file:
+        for line in file:
+            if line[0] == '"' and line[-11:] == '" inserted\n':
+                ignored_posts.append(line[1:-11])
+            else:
+                print('unknown log message:', line, flush=True)
 
 
 def read():
@@ -21,7 +31,10 @@ def read():
             posts = json.load(file)
             for post in posts:
                 fields = set(post.keys())
-                if (
+                fields.discard('link')
+                if post.get('id', None) in ignored_posts:
+                    continue
+                elif (
                     fields == {'id', 'created_time', 'message'}
                     or fields == {'id', 'created_time', 'message', 'story'}
                     or fields == {'id', 'created_time', 'story'}
@@ -33,9 +46,9 @@ def read():
                     story = post['story'] if 'story' in post else None
                     yield pid, user, time, message, story
                 else:
-                    print('corrupted data in {}'.format(path))
+                    print('corrupted data in {}'.format(path), flush=True)
                     for key, value in post.items():
-                        print(key, ': ', value)
+                        print(key + ': ' + value, flush=True)
 
 
 def segment(message):
@@ -49,11 +62,12 @@ def segment(message):
 
 def insert():
     db.create_tables([Post, Keyword, Sentiment], safe=True)
+    ignore()
     for pid, user, time, message, story in read():
         time = dateutil.parser.parse(time)
         message = segment(message) if message else None
         Post.create(user=user, time=time, message=message, story=story)
-        print('"' + pid + '" inserted')
+        print('"' + pid + '" inserted', flush=True)
 
 if __name__ == '__main__':
     # db.drop_tables([Post, Keyword, Sentiment], safe=True)
