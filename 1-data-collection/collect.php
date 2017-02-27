@@ -3,8 +3,8 @@
 require_once __DIR__ . '/vendor/autoload.php';
 require_once 'safe_facebook.php';
 
-$fp = fopen('target_list_serialized_final.dat', 'r');
-$unserialized = fread($fp, filesize('target_list_serialized_final.dat'));
+$fp = fopen('dat/target_list_serialized_final.dat', 'r');
+$unserialized = fread($fp, filesize('dat/target_list_serialized_final.dat'));
 fclose($fp);
 $targetList = unserialize($unserialized);
 
@@ -15,9 +15,9 @@ array_splice($targetList, 1);
 /* @noinspection SpellCheckingInspection */
 $secretKey = '3a9c3467214697db53d6ff29a96f52d7';
 /* @noinspection SpellCheckingInspection */
-$accessToken = 'EAARZCIAZCAqZA4BAPRkdzg5Pr4oCqHVoMFJYdZBqOzGCQ4sAckcGxgw87ne5F3PPRL0ZAs'.
-               'BfFYtoZA4kfZAPLomYHpVCXfNFqdgZCZBHbOdAKJ6HaAWv9EAnRK87KWpqMepkGIkIZAhAV'.
-               'lE3dP4uwUeXYRip2GPY2ZBvD87nzFwoezFgD2NP94eRrcywF1ATbLaCiMZD';
+$accessToken = 'EAARZCIAZCAqZA4BABDTI5qilZCP1oYdgH7bagRBLnD7ImeQVPnNUT1FgfCYwZC1dsjb8zbxZCM'.
+               'dAInCImRvjtg0wKnkOEQHkD6wHHwGgaCFDfZBlSGvU0FZBuZCan0QtYbFmwZBCIZA1Qs5R8GJEy'.
+               'PE7LrvTB7Jcykkl5ZAwHdYJS72jQs90kpo9RfED09c9QfgHLuXXaZAaVPZByI9gZDZD';
 
 $fb = new SafeFacebook\SafeFacebook([
 	'app_id' => '1265675586808222',
@@ -28,9 +28,11 @@ $fb->setDefaultAccessToken($accessToken);
 
 foreach ($targetList as $target) {
 	try {
-		$fp = fopen('archive_' . $target['id'] . '.json', 'w');
+		$fp = fopen('json/archive_' . $target['id'] . '.json', 'w');
 		fwrite($fp, '[');
-		$str = '/' . $target['id'] . '/posts?limit=100&since=2015-10-17&until=2016-01-17';
+		$str = '/' . $target['id'] . '/posts?'.
+		       'fields=message,story,link,created_time,id&'.
+		       'limit=100&since=2015-10-17&until=2016-01-17';
 		$postEdge = $fb->get($str)->getGraphEdge();
 		do {
 			foreach ($postEdge as $post)
