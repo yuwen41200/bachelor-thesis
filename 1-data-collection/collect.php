@@ -9,7 +9,7 @@ fclose($fp);
 $targetList = unserialize($unserialized);
 
 // we are just doing a prototype now
-array_splice($targetList, 1);
+// array_splice($targetList, 1);
 
 // destroy these before making the source code public
 /* @noinspection SpellCheckingInspection */
