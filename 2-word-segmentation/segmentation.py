@@ -3,6 +3,7 @@
 
 import json
 import os
+from xml.etree import ElementTree
 
 import dateutil.parser
 from ckipclient import CKIPClient
@@ -64,10 +65,24 @@ def insert():
     db.create_tables([Post, Keyword, Sentiment], safe=True)
     ignore()
     for pid, user, time, message, story in read():
-        time = dateutil.parser.parse(time)
-        message = segment(message) if message else None
-        Post.create(user=user, time=time, message=message, story=story)
-        print('"' + pid + '" inserted', flush=True)
+        try:
+            time = dateutil.parser.parse(time)
+            message = segment(message) if message else None
+        except ValueError as err:
+            print('ValueError:', err, flush=True)
+            print('failed to insert "' + pid + '"', flush=True)
+        except OverflowError as err:
+            print('OverflowError:', err, flush=True)
+            print('failed to insert "' + pid + '"', flush=True)
+        except ElementTree.ParseError as err:
+            print('ElementTree.ParseError:', err, flush=True)
+            print('failed to insert "' + pid + '"', flush=True)
+        except ConnectionError as err:
+            print('ConnectionError:', err, flush=True)
+            print('failed to insert "' + pid + '"', flush=True)
+        else:
+            Post.create(user=user, time=time, message=message, story=story)
+            print('"' + pid + '" inserted', flush=True)
 
 if __name__ == '__main__':
     # db.drop_tables([Post, Keyword, Sentiment], safe=True)
