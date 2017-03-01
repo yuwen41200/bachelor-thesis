@@ -32,14 +32,9 @@ def read():
             posts = json.load(file)
             for post in posts:
                 fields = set(post.keys())
-                fields.discard('link')
                 if post.get('id', None) in ignored_posts:
                     continue
-                elif (
-                    fields == {'id', 'created_time', 'message'}
-                    or fields == {'id', 'created_time', 'message', 'story'}
-                    or fields == {'id', 'created_time', 'story'}
-                ):
+                elif {'id', 'created_time'} < fields <= {'id', 'created_time', 'message', 'story', 'link'}:
                     pid = post['id']
                     user = path[8:-5]
                     time = post['created_time']
