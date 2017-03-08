@@ -4,6 +4,7 @@
 import json
 import os
 from xml.etree import ElementTree
+from time import sleep
 
 import dateutil.parser
 from ckipclient import CKIPClient
@@ -75,6 +76,11 @@ def insert():
         except ConnectionError as err:
             print('ConnectionError:', err, flush=True)
             print('failed to insert "' + pid + '"', flush=True)
+        except OSError as err:
+            print('OSError:', err, flush=True)
+            print('failed to insert "' + pid + '"', flush=True)
+            print('wait 60 seconds...')
+            sleep(60)
         else:
             Post.create(user=user, time=time, message=message, story=story)
             print('"' + pid + '" inserted', flush=True)
