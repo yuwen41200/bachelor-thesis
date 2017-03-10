@@ -79,7 +79,7 @@ def insert():
         except OSError as err:
             print('OSError:', err, flush=True)
             print('failed to insert "' + pid + '"', flush=True)
-            print('wait 60 seconds...')
+            print('wait 60 seconds...', flush=True)
             sleep(60)
         else:
             Post.create(user=user, time=time, message=message, story=story)
