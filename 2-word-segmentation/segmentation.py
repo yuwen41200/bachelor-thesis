@@ -33,6 +33,7 @@ def read():
             posts = json.load(file)
             for post in posts:
                 fields = set(post.keys())
+                # noinspection PyTypeChecker
                 if post.get('id', None) in ignored_posts:
                     continue
                 elif {'id', 'created_time'} < fields <= {'id', 'created_time', 'message', 'story', 'link'}:

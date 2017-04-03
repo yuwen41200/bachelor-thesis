@@ -52,5 +52,16 @@ class CorpusIntegrityTest(unittest.TestCase):
                     self.assertEqual(None, post.story)
             self.posts[idx] = 'TESTED'
 
+
+def fix_idx():
+    Post.delete().where(Post.id == 4078).execute()
+    Post.delete().where(Post.id == 5251).execute()
+    Post.delete().where(Post.id == 5252).execute()
+    Post.delete().where(Post.id == 5253).execute()
+    Post.delete().where(Post.id == 5254).execute()
+    Post.update(id=Post.id - 1).where(Post.id >= 4079).where(Post.id <= 5250).execute()
+    Post.update(id=Post.id - 5).where(Post.id >= 5255).execute()
+
 if __name__ == '__main__':
-    unittest.main()
+    # unittest.main()
+    fix_idx()
