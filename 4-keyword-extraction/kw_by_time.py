@@ -26,7 +26,15 @@ def init():
 
 
 def get_keywords():
-    normal.stop.update(('http', 'https', '「', '」', '『', '』', '─', '〈', '〉', '會', '請', '不', '都', '更', '最', '很', '上', '下'))
+    normal.stop.update((
+        'http', 'https', '「', '」', '『', '』', '─', '〈', '〉', '會', '請', '不', '都',
+        '更', '最', '很', '上', '下', '...', '…', '#', '人', '｜', '%', '才', '年', '天',
+        '還', '卻', '|', '沒', '喔', '只', '大', '說', '@', '前', '後', '次', '全', '位',
+        '來', '去', '※', 'Po', 'news.ltn.com.tw/news/politics/breakingnews', '一', '二', '三',
+        'www.hchg.gov.tw/zh-tw/Event/NewsDetail', 'www.facebook.com/NTUlawsocietas/photos/gm',
+        '849083545206911', '913106525447555', '1', '2', '3', '&', '再', '已', '時', '.......',
+        'www.appledaily.com.tw/realtimenews/article/new', '看', '應', '小', '好', '做', '先'
+    ))
     for user in Post.select(Post.user).distinct():
         sentences = []
         for post in Post.select().where(Post.user == user.user):
