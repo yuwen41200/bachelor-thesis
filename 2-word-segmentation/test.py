@@ -27,10 +27,10 @@ class CorpusIntegrityTest(unittest.TestCase):
         for pid, user, time, message, story in read():
             idx = self.posts.index(pid)
             idx_fix = idx + 1
-            if idx_fix >= 4078:
-                idx_fix += 1
-            if idx_fix >= 5251:
-                idx_fix += 4
+            # if idx_fix >= 4078:
+                # idx_fix += 1
+            # if idx_fix >= 5251:
+                # idx_fix += 4
             post = Post.get(Post.id == idx_fix)
             with self.subTest(idx=idx_fix, pid=pid):
                 self.assertEqual(user, post.user)
@@ -63,5 +63,5 @@ def fix_idx():
     Post.update(id=Post.id - 5).where(Post.id >= 5255).execute()
 
 if __name__ == '__main__':
-    # unittest.main()
-    fix_idx()
+    unittest.main()
+    # fix_idx()
