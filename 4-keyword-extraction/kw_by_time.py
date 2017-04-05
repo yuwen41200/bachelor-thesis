@@ -13,7 +13,7 @@ from models import *
 
 def init():
     num = Keyword.delete().where(Keyword.id > 128).execute()
-    print(num + ' rows removed')
+    print(str(num) + ' rows removed')
     if not os.path.isfile(normal.stop_path + '.zhtw'):
         subprocess.run([
             'opencc',
