@@ -3,7 +3,6 @@
 
 import subprocess
 import importlib
-import datetime
 
 from snownlp import normal
 from snownlp.summary import textrank
@@ -12,8 +11,8 @@ from models import *
 
 
 def init():
-    num = Keyword.delete().where(Keyword.id > 128).execute()
-    print(num + ' rows removed')
+    Keyword.drop_table(fail_silently=True)
+    Keyword.create_table(fail_silently=True)
     if not os.path.isfile(normal.stop_path + '.zhtw'):
         subprocess.run([
             'opencc',
@@ -36,15 +35,9 @@ def get_keywords():
         '849083545206911', '913106525447555', '1', '2', '3', '&', '再', '已', '時', '.......',
         'www.appledaily.com.tw/realtimenews/article/new', '看', '應', '小', '好', '做', '先'
     ))
-    start_time = datetime.datetime(2016, 1, 17)
-    one_week = datetime.timedelta(7)
-    while True:
-        end_time = start_time
-        start_time = end_time - one_week
-        if start_time - one_week < datetime.datetime(2015, 10, 17):
-            start_time = datetime.datetime(2015, 10, 17)
+    for user in Post.select(Post.user).distinct():
         sentences = []
-        for post in Post.select().where(Post.time.between(start_time, end_time)):
+        for post in Post.select().where(Post.user == user.user):
             if not post.message:
                 continue
             for sentence in post.message.split('\t'):
@@ -57,15 +50,13 @@ def get_keywords():
             keyword_text_rank.solve()
             for result in keyword_text_rank.top_index(15):
                 results.append(result)
-        yield str(start_time) + ' to ' + str(end_time), results
-        if start_time == datetime.datetime(2015, 10, 17):
-            break
+        yield user.user, results
 
 
 def insert():
-    for period, keywords in get_keywords():
+    for user, keywords in get_keywords():
         Keyword.create(
-            subject=period,
+            subject=user,
             rank0=keywords[0] if 0 < len(keywords) and keywords[0] else None,
             rank1=keywords[1] if 1 < len(keywords) and keywords[1] else None,
             rank2=keywords[2] if 2 < len(keywords) and keywords[2] else None,
@@ -77,7 +68,7 @@ def insert():
             rank8=keywords[8] if 8 < len(keywords) and keywords[8] else None,
             rank9=keywords[9] if 9 < len(keywords) and keywords[9] else None
         )
-        print('"' + period + '" inserted')
+        print('"' + user + '" inserted')
 
 if __name__ == '__main__':
     init()
