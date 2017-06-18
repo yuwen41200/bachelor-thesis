@@ -46,6 +46,7 @@ Four variations:
 We choose Binarized Multinomial Naive Bayes to get the most accurate sentiment classifications.
 Remove duplicate words in each document, then use the algorithm of Multinomial Naive Bayes.
 (see Figure 13.2 in http://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html)
+(see also http://web.stanford.edu/~jurafsky/NLPCourseraSlides.html)
 """
 
 import math
@@ -79,7 +80,10 @@ class NaiveBayes:
             docs_clazz = [doc for doc in docs if doc[1] == clazz]
             num_clazz = len(docs_clazz)
             self.prior[clazz] = num_clazz / num
-            texts_clazz = [word for doc in docs_clazz for sentence in doc[0].split('\t') for word in sentence.split(' ')]
+            texts_clazz = []
+            for doc in docs_clazz:
+                words = {word for sentence in doc[0].split('\t') for word in sentence.split(' ')}
+                texts_clazz.extend(words)
             for term in self.vocs:
                 tokens_clazz[term] = texts_clazz.count(term)
             denominator = sum((tokens_clazz[term] + 1) for term in self.vocs)
@@ -268,11 +272,11 @@ def ten_fold_cross_validation():
             while True:
                 tag = input('[sentiment.py] Input (P)ositive or (N)egative: ')
                 if tag == 'p' or tag == 'P':
-                    file.write('post_tags[' + str(idx) + '] = \'pos\'')
+                    file.write('post_tags[' + str(idx) + '] = \'pos\'\n')
                     post_tags.append('pos')
                     break
                 elif tag == 'n' or tag == 'N':
-                    file.write('post_tags[' + str(idx) + '] = \'neg\'')
+                    file.write('post_tags[' + str(idx) + '] = \'neg\'\n')
                     post_tags.append('neg')
                     break
             file.flush()
@@ -287,9 +291,9 @@ def ten_fold_cross_validation():
         accuracy_of_folds.append(accuracy)
     average_accuracy = sum(accuracy_of_folds) / len(accuracy_of_folds)
     print('Average accuracy: ' + str(average_accuracy) + '%')
+    prepare(posts, post_tags)
 
 if __name__ == '__main__':
-    init()
-    # prepare()
-    # validate()
+    # init()
+    ten_fold_cross_validation()
     # insert()
