@@ -301,5 +301,5 @@ def ten_fold_cross_validation():
 
 if __name__ == '__main__':
     # init()
-    ten_fold_cross_validation()
-    # insert()
+    # ten_fold_cross_validation()
+    insert()
