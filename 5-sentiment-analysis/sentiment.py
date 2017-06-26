@@ -263,9 +263,15 @@ def ten_fold_cross_validation():
         1215, 9098, 11270, 17861, 3946, 10828, 11948, 17533, 1071, 9108
     ]
     assert len(posts) == 948
-    post_tags = []
+    post_tags = [None] * 948
+    if os.path.isfile('sentiment.log'):
+        with open('sentiment.log') as file:
+            exec(file.read())
     with open('sentiment.log', 'w') as file:
         for idx, post in enumerate(posts):
+            if post_tags[idx] == 'pos' or post_tags[idx] == 'neg':
+                file.write('post_tags[' + str(idx) + '] = ' + repr(post_tags[idx]) + '\n')
+                continue
             os.system('cls' if os.name == 'nt' else 'clear')
             print('#########################', idx, '#########################', flush=True)
             print(Post.get(Post.id == post).message, flush=True)
@@ -273,11 +279,11 @@ def ten_fold_cross_validation():
                 tag = input('[sentiment.py] Input (P)ositive or (N)egative: ')
                 if tag == 'p' or tag == 'P':
                     file.write('post_tags[' + str(idx) + '] = \'pos\'\n')
-                    post_tags.append('pos')
+                    post_tags[idx] = 'pos'
                     break
                 elif tag == 'n' or tag == 'N':
                     file.write('post_tags[' + str(idx) + '] = \'neg\'\n')
-                    post_tags.append('neg')
+                    post_tags[idx] = 'neg'
                     break
             file.flush()
             os.fsync(file.fileno())
