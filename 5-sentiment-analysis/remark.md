@@ -26,3 +26,8 @@
   Accuracy of fold 10: 88.17204301075269%
   Average accuracy: 86.81720430107528%
   ```
+* Meta:
+  ```
+  948 posts in total
+  651 (68.67%) positive posts, 297 (31.33%) negative posts
+  ```
