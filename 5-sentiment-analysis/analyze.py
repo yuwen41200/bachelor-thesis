@@ -77,6 +77,27 @@ def build():
         for post in Post.select().where(Post.user == user.user):
             post_count, neg_post_count = fetch_row(post, post_count, neg_post_count)
         print('{:d}/{:d} ({:.2f}%)'.format(neg_post_count, post_count, neg_post_count/post_count*100))
+    # THIRD PART
+    print('Total | ', end='')
+    start_time = datetime.datetime(2016, 1, 17)
+    one_week = datetime.timedelta(7)
+    while True:
+        end_time = start_time
+        start_time = end_time - one_week
+        if start_time - one_week < datetime.datetime(2015, 10, 17):
+            start_time = datetime.datetime(2015, 10, 17)
+        post_count = 0
+        neg_post_count = 0
+        for post in Post.select().where(Post.time.between(start_time, end_time)):
+            post_count, neg_post_count = fetch_row(post, post_count, neg_post_count)
+        print('{:d}/{:d} ({:.2f}%) | '.format(neg_post_count, post_count, neg_post_count/post_count*100), end='')
+        if start_time == datetime.datetime(2015, 10, 17):
+            break
+    post_count = 0
+    neg_post_count = 0
+    for post in Post.select():
+        post_count, neg_post_count = fetch_row(post, post_count, neg_post_count)
+    print('{:d}/{:d} ({:.2f}%)'.format(neg_post_count, post_count, neg_post_count / post_count * 100))
 
 if __name__ == '__main__':
     sys.stdout = open('analyze.md', 'w')
