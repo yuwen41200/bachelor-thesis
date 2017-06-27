@@ -69,14 +69,20 @@ def build():
             neg_post_count = 0
             for post in Post.select().where((Post.time.between(start_time, end_time)) & (Post.user == user.user)):
                 post_count, neg_post_count = fetch_row(post, post_count, neg_post_count)
-            print('{:d}/{:d} ({:.2f}%) | '.format(neg_post_count, post_count, neg_post_count/post_count*100), end='')
+            try:
+                print('{:d}/{:d} ({:.2f}%) | '.format(neg_post_count, post_count, neg_post_count/post_count*100), end='')
+            except ZeroDivisionError:
+                print('{:d}/{:d} ( - ) | '.format(neg_post_count, post_count), end='')
             if start_time == datetime.datetime(2015, 10, 17):
                 break
         post_count = 0
         neg_post_count = 0
         for post in Post.select().where(Post.user == user.user):
             post_count, neg_post_count = fetch_row(post, post_count, neg_post_count)
-        print('{:d}/{:d} ({:.2f}%)'.format(neg_post_count, post_count, neg_post_count/post_count*100))
+        try:
+            print('{:d}/{:d} ({:.2f}%)'.format(neg_post_count, post_count, neg_post_count/post_count*100))
+        except ZeroDivisionError:
+            print('{:d}/{:d} ( - )'.format(neg_post_count, post_count))
     # THIRD PART
     print('Total | ', end='')
     start_time = datetime.datetime(2016, 1, 17)
@@ -90,14 +96,20 @@ def build():
         neg_post_count = 0
         for post in Post.select().where(Post.time.between(start_time, end_time)):
             post_count, neg_post_count = fetch_row(post, post_count, neg_post_count)
-        print('{:d}/{:d} ({:.2f}%) | '.format(neg_post_count, post_count, neg_post_count/post_count*100), end='')
+        try:
+            print('{:d}/{:d} ({:.2f}%) | '.format(neg_post_count, post_count, neg_post_count/post_count*100), end='')
+        except ZeroDivisionError:
+            print('{:d}/{:d} ( - ) | '.format(neg_post_count, post_count), end='')
         if start_time == datetime.datetime(2015, 10, 17):
             break
     post_count = 0
     neg_post_count = 0
     for post in Post.select():
         post_count, neg_post_count = fetch_row(post, post_count, neg_post_count)
-    print('{:d}/{:d} ({:.2f}%)'.format(neg_post_count, post_count, neg_post_count / post_count * 100))
+    try:
+        print('{:d}/{:d} ({:.2f}%)'.format(neg_post_count, post_count, neg_post_count/post_count*100))
+    except ZeroDivisionError:
+        print('{:d}/{:d} ( - )'.format(neg_post_count, post_count))
 
 if __name__ == '__main__':
     sys.stdout = open('analyze.md', 'w')
