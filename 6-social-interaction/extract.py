@@ -17,8 +17,11 @@ def find_url(string):
 def find_origin(string):
     pattern = ' shared (.*)\'s '
     prog = re.compile(pattern)
-    result = prog.search(string).group(1)
-    return result
+    result = prog.search(string)
+    if result:
+        return result.group(1)
+    else:
+        return None
 
 
 def parse_url(url):
