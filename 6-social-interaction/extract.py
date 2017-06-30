@@ -24,14 +24,20 @@ def find_origin(string):
         return None
 
 
+def inquire_name():
+    pass
+
+
 def parse_url(url):
     parse_result = urllib.parse.urlparse(url)
     if 'facebook.com' in parse_result.netloc:
         parts = parse_result.path.split('/')
-        if len(parts) >= 2 and not parts[0] and parts[1]:
+        if len(parts) >= 2 and not parts[0] and parts[1] and '.php' not in parts[1]:
             return parts[1]
-        elif len(parts) >= 1 and parts[0]:
+        elif len(parts) >= 1 and parts[0] and '.php' not in parts[0]:
             return parts[0]
+        else:
+            return None
     elif parse_result.netloc:
         return parse_result.netloc
     else:
