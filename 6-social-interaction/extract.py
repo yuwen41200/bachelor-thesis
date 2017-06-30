@@ -52,10 +52,12 @@ def inquire_name(query):
         except subprocess.CalledProcessError as called_process_error:
             print('?', flush=True)
             result = called_process_error.stdout
+            result = result[result.find('\n')+1:]
             print(result, end='', flush=True)
-            result = query[:-1]
+            result = None
         else:
             result = completed_process.stdout
+            result = result[result.find('\n')+1:]
             print(result, end='', flush=True)
             result = result[:-1]
         query = query[:-1]

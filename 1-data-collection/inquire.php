@@ -4,10 +4,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once 'safe_facebook.php';
 
 $secretKey = '3a9c3467214697db53d6ff29a96f52d7';
-$accessToken = 'EAARZCIAZCAqZA4BAFdYRHGULiVzcoPXppjLuIHRqnQEFW65tzMPtwrWgnhixsMj'.
-               'HJWxAws0EFbDZCdRRqZAmEc52QnQZC3949UUEYDB8jcS7gseUoBS1FaZCK4BxxQJ'.
-               'Dtd5FH30zkOtYCBZAdnUmEm7ZCWHFP2t7USPAQrVXJWprg516PRYwheUnUZCKSKl'.
-               'WMv1INXh59Ch4cNcoGl3pOvVv3W';
+$accessToken = 'EAARZCIAZCAqZA4BACZCqbD1Na3bpcCzMOSbRABs6ciq1cbawtJoRIQ0fyOA7Nqb'.
+               'rsGXMZA1Y7do5ZBRtDC883fFcaIQiohYIoQPz4sarN601ZCv1lgtu6naTRz097ZB'.
+               'tQHzmCvOEiTBZAiZBqLoZCZCxYIUEUe6zdI8xglQQkf5tgXaD01cZAokHTPCkCq1'.
+               'k6YT18daZAOtdrA1y8iCeUyNAU81JIM';
 
 $fb = new SafeFacebook\SafeFacebook([
 	'app_id' => '1265675586808222',
