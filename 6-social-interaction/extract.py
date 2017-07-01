@@ -27,6 +27,20 @@ def build_lookup():
     return _lookup
 
 
+def build_ulookup():
+    _ulookup = {}
+    with open('extract.log.0') as file:
+        for line in file:
+            line = line.rstrip('\n')
+            pair = line.split(' => ')
+            assert len(pair) == 2
+            if pair[1] != '?':
+                _ulookup[pair[0]] = pair[1]
+            else:
+                _ulookup[pair[0]] = None
+    return _ulookup
+
+
 def find_url(string):
     pattern = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     prog = re.compile(pattern)
@@ -90,16 +104,23 @@ def parse_url(url, expand_url=True):
     elif parse_result.netloc in {'goo.gl', 'bit.ly', 'tinyurl.com', 't.co', 'ppt.cc'}:
         if not expand_url:
             return None
+        if url in ulookup:
+            if ulookup[url]:
+                return parse_url(ulookup[url], expand_url=False)
+            else:
+                return None
         try:
             print(url + ' => ', end='', flush=True)
             response = requests.head(url, allow_redirects=True)
             redirected_url = response.url
         except requests.exceptions.ConnectionError:
             print('?', flush=True)
+            ulookup[url] = None
             return None
         else:
             print(redirected_url, flush=True)
-            parse_url(redirected_url, expand_url=False)
+            ulookup[url] = redirected_url
+            return parse_url(redirected_url, expand_url=False)
     elif parse_result.netloc:
         return parse_result.netloc
     else:
@@ -140,4 +161,5 @@ def dump_relations():
 
 if __name__ == '__main__':
     lookup = build_lookup()
+    ulookup = build_ulookup()
     dump_relations()
