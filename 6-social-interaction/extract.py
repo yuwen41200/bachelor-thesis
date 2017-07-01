@@ -4,6 +4,7 @@
 import re
 import os
 import json
+import requests
 import subprocess
 import urllib.parse
 
@@ -12,6 +13,17 @@ def build_lookup():
     lookup_path = os.path.join('..', '1-data-collection', 'dat', 'uid_to_name_map.dat')
     with open(lookup_path) as file:
         _lookup = json.load(file)
+    with open('extract.log') as file:
+        for line in file:
+            line = line.rstrip('\n')
+            pair = line.split(' => ')
+            assert len(pair) == 2
+            if pair[1] != '?':
+                _lookup[pair[0]] = pair[1]
+            else:
+                _lookup[pair[0]] = None
+                line = next(file)
+                assert line.startswith('Graph API Error: ')
     return _lookup
 
 
@@ -65,7 +77,7 @@ def inquire_name(query):
         return result
 
 
-def parse_url(url):
+def parse_url(url, expand_url=True):
     parse_result = urllib.parse.urlparse(url)
     if 'facebook.com' in parse_result.netloc:
         parts = parse_result.path.split('/')
@@ -75,6 +87,19 @@ def parse_url(url):
             return inquire_name(parts[0])
         else:
             return None
+    elif parse_result.netloc in {'goo.gl', 'bit.ly', 'tinyurl.com', 't.co', 'ppt.cc'}:
+        if not expand_url:
+            return None
+        try:
+            print(url + ' => ', end='', flush=True)
+            response = requests.head(url, allow_redirects=True)
+            redirected_url = response.url
+        except requests.exceptions.ConnectionError:
+            print('?', flush=True)
+            return None
+        else:
+            print(redirected_url, flush=True)
+            parse_url(redirected_url, expand_url=False)
     elif parse_result.netloc:
         return parse_result.netloc
     else:
