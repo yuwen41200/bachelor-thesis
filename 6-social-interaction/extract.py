@@ -111,8 +111,8 @@ def parse_url(url, expand_url=True):
                 return None
         try:
             print(url + ' => ', end='', flush=True)
-            response = requests.head(url, allow_redirects=True)
-            redirected_url = response.url
+            response = requests.head(url, allow_redirects=False)  # allow_redirects=True
+            redirected_url = response.headers['Location']  # response.url
         except requests.exceptions.ConnectionError:
             print('?', flush=True)
             ulookup[url] = None
