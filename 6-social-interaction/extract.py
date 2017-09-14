@@ -157,7 +157,7 @@ def fetch_relation():
 def dump_relations():
     with open('extract.csv', 'w') as file:
         for relation in fetch_relation():
-            file.write(relation[1] + ';' + relation[0] + '\n')
+            file.write('"' + relation[1] + '";"' + relation[0] + '"\n')
 
 if __name__ == '__main__':
     lookup = build_lookup()
