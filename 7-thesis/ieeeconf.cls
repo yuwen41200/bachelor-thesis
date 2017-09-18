@@ -3807,9 +3807,9 @@ which is provided to fool Hyperref.}}
 \def\keywords{\normalfont%
     % IEEE uses the term (in bold italics) "Index Terms" now. 
     \if@twocolumn%
-      \@IEEEabskeysecsize\bfseries\textit{Index Terms}---\,\relax%
+      \@IEEEabskeysecsize\bfseries\textit{}\,\relax%
     \else%
-      \begin{center}\@IEEEabskeysecsize\bfseries Index Terms\end{center}\quotation\@IEEEabskeysecsize%
+      \begin{center}\@IEEEabskeysecsize\bfseries\end{center}\quotation\@IEEEabskeysecsize%
     \fi\@IEEEgobbleleadPARNLSP}
 \def\endkeywords{\relax\if@technote\vspace{1.34ex}\else\vspace{0.67ex}\fi%
     \par\if@twocolumn\else\endquotation\fi%
