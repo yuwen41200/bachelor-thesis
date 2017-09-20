@@ -1210,7 +1210,7 @@
 \fi}
 
 
-\parindent        1.0em
+\parindent        2.0em
 
 % conference papers do not have headers, other papers need
 % to reserve space for them

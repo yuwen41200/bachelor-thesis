@@ -22,6 +22,7 @@
 %\usepackage{amsmath} % assumes amsmath package installed
 %\usepackage{amssymb} % assumes amsmath package installed
 \usepackage{CJKutf8} % for Chinese character support
+\usepackage{setspace} % Chinese characters need larger line height
 
 \title{\LARGE \bf
 社群網站上之政治活動分析：以台灣\,2016\,年總統選舉為例$^{\ast}$
@@ -37,6 +38,7 @@
 
 \begin{document}
 \begin{CJK*}{UTF8}{bsmi}
+\onehalfspacing
 
 \maketitle
 \thispagestyle{empty}
@@ -46,7 +48,7 @@
 
 \begin{abstract}
 摘要\enskip---\enskip可以輸入繁體字了。教育雲端服務平臺將進行資安設備調整作業，並於本次作業時程完成後，
-進行網站功能測試，屆時網路服務將會中斷，造成您的不便，敬請見諒。
+進行網站功能測試，屆時網路服務將會中斷，造成您的不便，敬請見諒。獲得快速的翻譯。
 \end{abstract}
 
 \begin{keywords}
@@ -76,10 +78,25 @@
 \,2016\,年總統選舉競選期間，各政黨、候選人、利益團體與意見領袖皆大量使用臉書來宣揚其政治理念。
 本研究的目的便是嘗試使用資訊科技，以創新的方法分析這些使用者於臉書上的公開貼文，探討使用者於社群網站上之政治活動的模式。
 
+\subsection*{對數位行動主義的批判}
+
+儘管人們普遍同意數位行動主義能有效促進民主政治，這個趨勢仍然伴隨了一些潛在的隱憂。
+常見對數位行動主義的批評包含：
+\,(1)\,數位落差（digital divide）：
+由於經濟、教育等差異，有些族群缺少機會接觸資訊科技，或者沒有能力使用資訊科技。
+\,(2)\,民粹主義（populism）：
+網路本質上便具有民粹主義、安那其（anarchy）、去中心化（decentralization）等特性，網路輿論的品質可能偏低。
+\,(3)\,懶人行動主義（slacktivism）：
+並沒有參與什麼實際的行動，僅是在網路上分享自己關心的社會議題，便自以為自己已經對這個議題做出了貢獻。
+\,(4)\,鍵擊行動主義（clicktivism）：
+類似懶人行動主義，若一味地追求點擊率、做網路行銷，可能反而會忽略了實際的行動。
+\,(5)\,網路巴爾幹化（cyberbalkanization）：
+由於商業壟斷、政治審查、或是個人不願意接觸與自己立場相左的訊息等因素，使網際網路逐漸分裂、解體。
+
 \subsection*{資訊科技與人文社會跨領域研究的挑戰與契機}
 
 近年來，愈來愈多學者開始嘗試將計算機科學應用於人文社會科學領域，
-促成了數位典藏（digital archives）、數位人文（digital humanities）、計算社會科學（computational social science）、
+建立了數位典藏（digital archives）、數位人文（digital humanities）、計算社會科學（computational social science）、
 計算社會學（computational sociology）、社會模擬（social simulation）等新興研究領域。
 然而，這樣的跨領域研究是否真的有價值一直是備受爭議的。
 以下舉出一些此類研究常受到的批評，以及我從事此類研究的立場。
@@ -107,6 +124,60 @@
 \,(3)\,資料探勘（data mining）、自然語言處理（natural language processing）等技術使一些過去被認為窒礙難行的研究成為可能。
 
 \section*{二、文獻探討}
+
+過去已有多位學者考察了社群網站在競選活動中的使用，
+例如\,Larsson and Moe (2012)\,研究了\,2010\,年瑞典選舉競選期間推特的使用。\cite{c1}
+該研究的作法是，蒐集競選期間含有特定\,hashtag\,的推文，進行社會網絡分析（social network analysis）。
+
+該研究做了以下分析：
+\,(1)\,不同時間推文數量的變化。
+\,(2)\,各種推文類型（一般、提及、轉推）所佔的比例。
+\,(3)\,列出最活躍的使用者及其推文數量，並調查其身份背景。
+\,(4)\,活躍用戶的「提及」網絡圖（透過資料視覺化）。
+\,(5)\,呈上，將使用者分為發送者、接受者、兩者皆是，並調查其身份背景。
+\,(6)\,活躍用戶的「轉推」網絡圖（透過資料視覺化）。
+\,(7)\,呈上，將使用者分為轉推者、被轉推者、兩者皆是，並調查其身份背景。
+
+該研究發現：
+\,(1)\,推文數量的變化反應了線下競選活動的情勢。
+\,(2)\,大部份的推文都是由少部份的活躍用戶所發出。
+\,(3)\,大部份的活躍用戶都是政治菁英，然而，平民的聲音仍具有一定的影響力。
+\,(4)\,大部份的推文都是一般推文，然而，許多活躍用戶仍會在推特上與人討論。
+
+然而該研究也具有以下限制：
+\,(1)\,只有極少數的民眾有使用推特。
+\,(2)\,只蒐集含有特定\,hashtag\,的推文。
+\,(3)\,應分析不同情境下的使用情形，加以比較。
+另外，該研究也讓我想到一個值得進一步探究的問題，那就是，如何區別真人用戶與機器用戶？
+
+另外\,Zhang et al. (2010)\,則研究了社群網站對公民的政治態度與行為的引響。\cite{c2}
+該研究參考了以下既有理論：
+\,(1)\,社會資本（social capital）、大眾媒體（mass media）、人際討論（interpersonal discussion）、
+社群網站（social networking sites）都會影響公民參與（civic participation）和政治參與（political participation）。
+\,(2)\,影響個人的政治態度與行為的因子有：政治興趣（political interest）、政治效能（political efficacy）、
+政治信任（political trust）、政黨認同（party identification）。
+
+該研究的作法是採用電話調查，
+應變數（dependent variable）為政治參與、公民參與、對政府的信任，
+自變數（independent variable）為社群網站之依賴、政治之人際討論，
+控制變數（control variable）為政治效能、意識形態、政治興趣、年齡、性別、種族、教育程度。
+最後，進行階層式迴歸分析（hierarchical regression analysis）。
+
+該研究發現：
+\,(1)\,社群網站的使用與公民參與的提升呈現顯著的正相關，與政治參與、對政府的信任則無明顯關聯。
+\,(2)\,討論政治議題有助於促進公民參與和政治參與，無助於提升對政府的信任。
+\,(3)\,教育程度愈高，愈有可能參與公民活動和政治活動，但對政府的信任卻愈低。
+\,(4)\,然而，政治效能感較高者，其政治信任感也較高。
+
+然而該研究也具有以下限制：
+\,(1)\,樣本可能不夠具代表性，有超過四分之三的受訪者都完全不依賴社群網站。
+\,(2)\,除了公民參與／政治參與的二分法外，是否還有更適當的分類法？
+另外，該研究也讓我想到兩個值得進一步探究的問題：
+\,(1)\,調查結果顯示社群網站的使用無助於促進政治參與，這項發現在東方國家也成立嗎？
+\,(2)\,調查結果顯示年長者較積極參與政治活動，當今台灣社會也是如此嗎？
+
+最後\,Hosch-Dayican et al. (2016)\,則研究了\,2012\,年德國議會選舉競選期間公民如何在推特上遊說他人。\cite{c3}
+其研究方法包含：
 
 \subsection{Selecting a Template (Heading 2)}
 
@@ -235,38 +306,10 @@ Appendixes should appear before the acknowledgment.
 
 The preferred spelling of the word acknowledgment in America is without an e after the g. Avoid the stilted expression, One of us (R. B. G.) thanks . . .  Instead, try R. B. G. thanks. Put sponsor acknowledgments in the unnumbered footnote on the first page.
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-References are important to the reader; therefore, each citation must be complete and correct. If at all possible, references should be commonly available publications.
-
-
-
-\begin{thebibliography}{99}
-
-\bibitem{c1} G. O. Young, Synthetic structure of industrial plastics (Book style with paper title and editor), 	in Plastics, 2nd ed. vol. 3, J. Peters, Ed.  New York: McGraw-Hill, 1964, pp. 1564.
-\bibitem{c2} W.-K. Chen, Linear Networks and Systems (Book style).	Belmont, CA: Wadsworth, 1993, pp. 123135.
-\bibitem{c3} H. Poor, An Introduction to Signal Detection and Estimation.   New York: Springer-Verlag, 1985, ch. 4.
-\bibitem{c4} B. Smith, An approach to graphs of linear forms (Unpublished work style), unpublished.
-\bibitem{c5} E. H. Miller, A note on reflector arrays (Periodical styleAccepted for publication), IEEE Trans. Antennas Propagat., to be publised.
-\bibitem{c6} J. Wang, Fundamentals of erbium-doped fiber amplifiers arrays (Periodical styleSubmitted for publication), IEEE J. Quantum Electron., submitted for publication.
-\bibitem{c7} C. J. Kaufman, Rocky Mountain Research Lab., Boulder, CO, private communication, May 1995.
-\bibitem{c8} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, Electron spectroscopy studies on magneto-optical media and plastic substrate interfaces(Translation Journals style), IEEE Transl. J. Magn.Jpn., vol. 2, Aug. 1987, pp. 740741 [Dig. 9th Annu. Conf. Magnetics Japan, 1982, p. 301].
-\bibitem{c9} M. Young, The Techincal Writers Handbook.  Mill Valley, CA: University Science, 1989.
-\bibitem{c10} J. U. Duncombe, Infrared navigationPart I: An assessment of feasibility (Periodical style), IEEE Trans. Electron Devices, vol. ED-11, pp. 3439, Jan. 1959.
-\bibitem{c11} S. Chen, B. Mulgrew, and P. M. Grant, A clustering technique for digital communications channel equalization using radial basis function networks, IEEE Trans. Neural Networks, vol. 4, pp. 570578, July 1993.
-\bibitem{c12} R. W. Lucky, Automatic equalization for digital communication, Bell Syst. Tech. J., vol. 44, no. 4, pp. 547588, Apr. 1965.
-\bibitem{c13} S. P. Bingulac, On the compatibility of adaptive controllers (Published Conference Proceedings style), in Proc. 4th Annu. Allerton Conf. Circuits and Systems Theory, New York, 1994, pp. 816.
-\bibitem{c14} G. R. Faulhaber, Design of service systems with priority reservation, in Conf. Rec. 1995 IEEE Int. Conf. Communications, pp. 38.
-\bibitem{c15} W. D. Doyle, Magnetization reversal in films with biaxial anisotropy, in 1987 Proc. INTERMAG Conf., pp. 2.2-12.2-6.
-\bibitem{c16} G. W. Juette and L. E. Zeffanella, Radio noise currents n short sections on bundle conductors (Presented Conference Paper style), presented at the IEEE Summer power Meeting, Dallas, TX, June 2227, 1990, Paper 90 SM 690-0 PWRS.
-\bibitem{c17} J. G. Kreifeldt, An analysis of surface-detected EMG as an amplitude-modulated noise, presented at the 1989 Int. Conf. Medicine and Biological Engineering, Chicago, IL.
-\bibitem{c18} J. Williams, Narrow-band analyzer (Thesis or Dissertation style), Ph.D. dissertation, Dept. Elect. Eng., Harvard Univ., Cambridge, MA, 1993. 
-\bibitem{c19} N. Kawasaki, Parametric study of thermal and chemical nonequilibrium nozzle flow, M.S. thesis, Dept. Electron. Eng., Osaka Univ., Osaka, Japan, 1993.
-\bibitem{c20} J. P. Wilkinson, Nonlinear resonant circuit devices (Patent style), U.S. Patent 3 624 12, July 16, 1990. 
-
-\end{thebibliography}
+\bibliographystyle{ieeetr}
+\bibliography{citation}
 
 \end{CJK*}
 \end{document}
