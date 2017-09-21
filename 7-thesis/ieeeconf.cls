@@ -1684,7 +1684,8 @@
                 % on \labelindent, \labelwidth and
                 % \labelsep
                 \ifnocalcleftmargin\relax%
-                \else\calcleftmargin{\labelindent}%
+                \else\relax%
+                %\else\calcleftmargin{\labelindent}%
                 \fi}\fi\fi}%
 
 
@@ -3344,9 +3345,11 @@ which is provided to fool Hyperref.}}
 \ifnum\c@enumiv=\@IEEEtrantmpcountA\relax\@IEEEtriggercmd\relax\fi}
 
 \def\@biblabel#1{[#1]}
+\let\@refname\relax
+\def\refname#1{\def\@refname{#1}}
 
-\def\thebibliography#1{\section*{References}%
-    \addcontentsline{toc}{section}{References}%
+\def\thebibliography#1{\section*{\@refname}%
+    \addcontentsline{toc}{section}{\@refname}%
     % V1.6 add some rubber space here and provide a command trigger
     \footnotesize \vskip 0.3\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip%
     \list{\@biblabel{\@arabic\c@enumiv}}%

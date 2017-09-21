@@ -39,6 +39,7 @@
 \begin{document}
 \begin{CJK*}{UTF8}{bsmi}
 \onehalfspacing
+\refname{參考文獻}
 
 \maketitle
 \thispagestyle{empty}
@@ -177,23 +178,84 @@
 \,(2)\,調查結果顯示年長者較積極參與政治活動，當今台灣社會也是如此嗎？
 
 最後\,Hosch-Dayican et al. (2016)\,則研究了\,2012\,年德國議會選舉競選期間公民如何在推特上遊說他人。\cite{c3}
-其研究方法包含：
+其研究方法為：
+\,(1)\,資料蒐集（data collection）：
+先選定數個\,hashtag，再透過滾雪球抽樣（snowball sampling），找出其他相關的\,hashtag。
+蒐集選舉期間含有這些\,hashtag\,的推文。
+\,(2)\,資料清理（data cleaning）：
+接著，需刪去誤判的推文。
+先刪去語言與地區皆不符的推文，再從剩下的推文中篩選出直接與選舉有關的推文。
+\,(3)\,操作化（operationalization）：
+承上，先將推文分為「競選活動」與「非競選活動」兩種類型，再將屬於「競選活動」的推文分為
+「說服型競選（persuasive campaigning）」與「攻擊型競選（negative campaigning）」兩種類型。
+\,(4)\,自動化內容分析（automated content analysis）：
+以上篩選與分類的過程仰賴質化內容分析（qualitative content analysis）。
+採用監督式學習（supervised learning），先由研究者做一小部份的樣本，再用它來訓練機器。
+具體作法包含克氏 α 係數（Krippendorff's alpha）、單純貝氏分類器（naive Bayes classifier）、
+一元語法（unigram）與二元語法（bigram）、詞幹提取（stemming）、十等分交叉驗證
+（10-fold cross-validation）等等。
 
-\subsection{Selecting a Template (Heading 2)}
+該研究做了以下分析：
+\,(1)\,各種推文類型（非競選活動、說服型競選、攻擊型競選）與各種用戶類型（政黨／政治人物、媒體／記者、平民）
+的組合的推文所佔的比例。
+\,(2)\,從屬於「競選活動」的推文中隨機抽樣，進行更深入的內容分析。
+不論是「說服型競選」還是「攻擊型競選」，其推文皆可分為直接宣傳（明確表態要／不要投給誰）
+與間接宣傳（僅表達支持／反對意見）兩種。
 
-First, confirm that you have the correct template for your paper size. This template has been tailored for output on the US-letter paper size. Please do not use it for A4 paper since the margin requirements for A4 papers may be different from Letter paper size.
+該研究發現：
+\,(1)\,平民相當投入線上政治活動。
+\,(2)\,政黨／政治人物最常採取說服型競選，媒體／記者及平民最常發佈非競選活動的推文。
+\,(3)\,相較於其他用戶類型，平民採取攻擊型競選的比例最高。
+儘管在所有的用戶類型中，用戶採取攻擊型競選的比例都是最低的。
+\,(4)\,說服型競選相當程度地採用「轉推」的形式。
+直接宣傳的部份，常出現含有投票動機或投票行為的貼文，尤其是在選舉前夕和選舉當天。
+間接宣傳的部份，常出現對新聞報導、採訪、辯論的回應。
+\,(5)\,攻擊型競選則多為間接宣傳，採用「轉推」的形式，引用政黨／政治人物的推文。
+比起政治菁英，平民的推文更包含了對採訪與辯論的回應，以及對政黨／政治人物的不滿與憤怒。
+\,(6)\,平民被歸類為攻擊型競選的推文大部份都是在宣洩情緒與意見，而不是以進行攻擊型競選為目的。
 
-\subsection{Maintaining the Integrity of the Specifications}
+該文作者建議後續研究者，進一步分析「轉推」網絡，並探討線上競選的後果。
+另外，該研究也讓我想到幾個值得進一步探究的問題：
+\,(1)\,這份研究只有區別政治菁英與平民，忽略了使用者間的其他差異（例如社會經濟背景）。
+\,(2)\,採用監督式學習能降低解讀反諷文章的錯誤率到什麼程度？
+\,(3)\,台灣的使用者是否也具有如此高的素養，僅將近\,20\%\,的網路貼文被歸類為攻擊型競選？
 
-The template is used to format your paper and style the text. All margins, column widths, line spaces, and text fonts are prescribed; please do not alter them. You may note peculiarities. For example, the head margin in this template measures proportionately more than is customary. This measurement and others are deliberate, using specifications that anticipate your paper as one part of the entire proceedings, and not as an independent document. Please do not revise any of the current designations
+\section*{三、研究問題與方法}
 
-\section{MATH}
+本研究分析的資料來自\,2016\,年台灣總統選舉競選期間臉書各大政治性粉絲專頁之公開資料。
+本研究進行的分析包含以下四個部份：
+\begin{itemize}
+\item 貼文數量對時間的關係圖。\\
+各政黨／侯選人／意見領袖的貼文數量。
+\item 每個時間區間最熱門的關鍵字分別是哪些？\\
+嘗試透過關鍵字分析，\\
+找出各政黨／侯選人／意見領袖最重視的議題。
+\item 有多少比例的貼文是攻擊型競選？\\
+哪些政黨／候選人／意見領袖、什麼時候\\
+最常使用攻擊型競選？
+\item 各發文者與其分享的貼文的來源之網絡圖。\\
+特定族群是否會傾向於分享特定來源的資訊？
+\end{itemize}
 
-Before you begin to format your paper, first write and save the content as a separate text file. Keep your text and graphic files separate until after the text has been formatted and styled. Do not use hard tabs, and limit use of hard returns to only one return at the end of a paragraph. Do not add any kind of pagination anywhere in the paper. Do not number text heads-the template will do that for you.
+本研究主要採用量化研究（quantitative research），著重於資料分析。
+在研究方法上，本研究結合了多種現代計算機科學理論與技術：
+\begin{itemize}
+\item 資料探勘（data mining）
+\item 機器學習（machine learning）
+\item 自然語言處理（natural language processing）
+\item 資料視覺化（data visualization）
+\end{itemize}
 
-Finally, complete content and organizational editing before formatting. Please take note of the following items when proofreading spelling and grammar:
+本研究具體的研究步驟如下所述。
 
-\subsection{Abbreviations and Acronyms} Define abbreviations and acronyms the first time they are used in the text, even after they have been defined in the abstract. Abbreviations such as IEEE, SI, MKS, CGS, sc, dc, and rms do not have to be defined. Do not use abbreviations in the title or heads unless they are unavoidable.
+\subsection*{資料蒐集（data collection）}
+
+使用\,Facebook Graph API\,蒐集競選期間（投票日前三個月至投票日止）各大政治性粉絲專頁之公開資料。
+本研究蒐集的資料以貼文為主，同時亦包含其附加的詮釋資料（metadata），例如發文時間、分享的連結等。
+為保護個人隱私，本研究只蒐集粉絲專頁上的公開資料，不蒐集任何個別使用者的資料。
+
+我參考\,Socialbakers\,及\,Likeboy\,提供之社群媒體統計數據，輔以我個人的自身經驗，決定欲蒐集的粉絲專頁清單。
+查詢這些粉絲專頁最新的按讚數，將它們依按讚數由高到低排序。
 
 \subsection{Units}
 
@@ -235,8 +297,7 @@ Note that the equation is centered using a center tab stop. Be sure that the sym
 
 \end{itemize}
 
-
-\section{USING THE TEMPLATE}
+\section*{四、研究結果與討論}
 
 Use this sample document as your LaTeX source file to create your document. Save this file as {\bf root.tex}. You have to make sure to use the cls file that came with this distribution. If you use a different style file, you cannot expect to get required margins. Note also that when you are creating your out PDF file, the source file is only part of the equation. {\it Your \TeX\ $\rightarrow$ PDF filter determines the output file size. Even if you make all the specifications to output a letter file in the source - if you filter is set to produce A4, you will only get A4 output. }
 
@@ -278,7 +339,7 @@ Three & Four\\
 
 Figure Labels: Use 8 point Times New Roman for Figure labels. Use words rather than symbols or abbreviations when writing Figure axis labels to avoid confusing the reader. As an example, write the quantity Magnetization, or Magnetization, M, not just M. If including units in the label, present them within parentheses. Do not label axes only with units. In the example, write Magnetization (A/m) or Magnetization {A[m(1)]}, not just A/m. Do not label axes with a ratio of quantities and units. For example, write Temperature (K), not Temperature/K.
 
-\section{CONCLUSIONS}
+\section*{五、結論}
 
 A conclusion section is not required. Although a conclusion may review the main points of the paper, do not replicate the abstract as the conclusion. A conclusion might elaborate on the importance of the work or suggest applications and extensions. 
 
