@@ -23,6 +23,7 @@
 %\usepackage{amssymb} % assumes amsmath package installed
 \usepackage{CJKutf8} % for Chinese character support
 \usepackage{setspace} % Chinese characters need larger line height
+\usepackage{hyperref} % for citing websites in BibTeX
 
 \title{\LARGE \bf
 社群網站上之政治活動分析：以台灣\,2016\,年總統選舉為例$^{\ast}$
@@ -250,24 +251,29 @@
 
 \subsection*{資料蒐集（data collection）}
 
-使用\,Facebook Graph API\,蒐集競選期間（投票日前三個月至投票日止）各大政治性粉絲專頁之公開資料。
-本研究蒐集的資料以貼文為主，同時亦包含其附加的詮釋資料（metadata），例如發文時間、分享的連結等。
+使用\,Facebook Graph API\,蒐集競選期間（投票日前三個月至投票日止）台灣各大政治性粉絲專頁之公開資料。
+本研究蒐集的資料以貼文為主，同時亦包含一些附屬的詮釋資料（metadata），例如發文時間、分享的連結等。
 為保護個人隱私，本研究只蒐集粉絲專頁上的公開資料，不蒐集任何個別使用者的資料。
 
-我參考\,Socialbakers\,及\,Likeboy\,提供之社群媒體統計數據，輔以我個人的自身經驗，決定欲蒐集的粉絲專頁清單。
-查詢這些粉絲專頁最新的按讚數，將它們依按讚數由高到低排序。
+採用何種方法決定欲蒐集的粉絲專頁清單，對研究結果有極大的引響。
+為確保本研究的中立性，我參考\,Socialbakers\,\cite{c4}\,及\,Likeboy\,\cite{c5}\,提供之社群媒體統計數據，
+輔以我個人的自身經驗，整理出一份台灣熱門政治性粉絲專頁的清單。
+得到粉絲專頁清單後，我還做了進一步的篩選。
+我查詢這些粉絲專頁最新的按讚數，將它們依按讚數由高到低排序。
+擁有超過一萬個讚的粉絲專頁共計有\,135\,個，這些粉絲專頁便是我最終選定的蒐集對象。
 
-\subsection{Units}
+完成後，本研究共取得了\,18,967\,筆臉書貼文，來自\,135\,個台灣熱門的政治性粉絲專頁。
 
-\begin{itemize}
+\subsection*{斷詞（word segmentation）}
 
-\item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as 3.5-inch disk drive.
-\item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
-\item Do not mix complete spellings and abbreviations of units: Wb/m2 or weber per square meter, not webers/m2.  Spell out units when they appear in text: . . . a few henries, not . . . a few H.
-\item Use a zero before decimal points: 0.25, not .25. Use cm3, not cc. (bullet list)
+下個步驟是進行文本斷詞，也就是將一篇文章拆解成一個個的單詞。
+例如「維根斯坦是二十世紀最有影響力的哲學家之一。」這句話可以被拆解成
+「維根斯坦」、「是」、「二十世紀」、「最」、「有」、「影響力」、「的」、「哲學家」、「之一」、「。」等單詞。
+斷詞是自然語言處理中最基本的步驟，文本必需先經過斷詞處理，才得以進一步分析。
 
-\end{itemize}
-
+本研究採用中央研究院資訊科學研究所中文詞知識庫小組所研發之中文斷詞系統\,\cite{c6}，
+搭配我自行開發之中文斷詞系統\,Python\,客戶端程式\,\cite{c7}，為蒐集到的貼文進行斷詞。
+本研究之所以選擇中央研究院的中文斷詞系統，是因為相較於其他非台灣開發的中文斷詞系統，此系統對台灣本地的文本有較好的表現。
 
 \subsection{Equations}
 
