@@ -51,6 +51,9 @@
 \begin{abstract}
 摘要\enskip---\enskip可以輸入繁體字了。教育雲端服務平臺將進行資安設備調整作業，並於本次作業時程完成後，
 進行網站功能測試，屆時網路服務將會中斷，造成您的不便，敬請見諒。獲得快速的翻譯。
+應該還要有一行，不可能只寫那麼少。可是這樣還不夠多，還不會換行。可以再給我多一點嗎，我很需要換下一行。
+臺灣東部地區有局部短暫陣雨，其他地區及澎湖、金門、馬祖為多雲到晴，午後中南部地區及北部山區亦有局部短暫雷陣雨。
+明日東海北部平均風力將稍減弱。本局將盡力確保其即時性及正確性。
 \end{abstract}
 
 \begin{keywords}
@@ -76,9 +79,12 @@
 這也讓許多社會學家、政治學家、傳播學家與計算機科學家開始對台灣的數位行動主義熱潮產生興趣。
 這不但是一個相當新穎的、跨領域的研究主題，這方面的研究對當今台灣社會也是相當重要的。
 
-在台灣，推特（Twitter）較不盛行，人們使用的社群網站以臉書（Facebook）為主。
-\,2016\,年總統選舉競選期間，各政黨、候選人、利益團體與意見領袖皆大量使用臉書來宣揚其政治理念。
-本研究的目的便是嘗試使用資訊科技，以創新的方法分析這些使用者於臉書上的公開貼文，探討使用者於社群網站上之政治活動的模式。
+2016\,年總統選舉競選期間，各政黨、候選人、利益團體與意見領袖皆大量使用
+臉書粉絲專頁（Facebook Pages）來與人民互動並宣揚其政治理念。
+多數民眾也相信這些網路宣傳確實有效引響了選舉的得票數。
+然而這些社群網站上的政治活動是否存在著某些機制？我們能夠利用電腦來分析這些現象嗎？還有許許多多的問題有待我們回答。
+本研究的目的便是嘗試使用資訊科技，以創新的方法分析這些使用者在臉書粉絲專頁上的公開貼文，探討使用者於社群網站上之政治活動的模式。
+由於在台灣推特（Twitter）較不盛行，人們使用的社群網站以臉書（Facebook）為主，因此本研究的重心也將放在臉書上。
 
 \subsection*{對數位行動主義的批判}
 
@@ -277,7 +283,7 @@
 若要採用其他斷詞系統，可能得用台灣本地的語料重新訓練，才能達到同樣的表現。
 
 完成後，我更做了完整性測試（integrity test），檢查斷詞前與斷詞後的貼文是否一致。
-測試結果發現斷詞系統相當穩定，僅極少數（不到\,3\%）的貼文含有錯誤（大多是出現亂碼）。
+測試結果顯示斷詞系統相當穩定，僅極少數（不到\,3\%）的貼文含有錯誤（大多是出現亂碼）。
 
 為了讓後續的分析更方便，我使用\,peewee\,物件關係對映（object-relational mapping）套件\,\cite{c8}，
 將斷詞後的文本與詮釋資料儲存在資料庫中。
@@ -286,24 +292,13 @@
 \subsection*{總體分佈（overall distribution）}
 
 先對研究資料做最初步的分析。
+使用\,pandas\,資料分析函式庫\,\cite{c9}\,和\,Matplotlib\,繪圖函式庫\,\cite{c10}
+繪製貼文數量對時間的關係圖以及累計貼文數量對時間的關係圖。
+另外，統計各粉絲專頁分別有多少筆貼文、佔全部貼文的百分比。
 
-\subsection{Some Common Mistakes}
-\begin{itemize}
+\subsection*{關鍵字擷取（keyword extraction）}
 
-
-\item The word data is plural, not singular.
-\item The subscript for the permeability of vacuum ?0, and other common scientific constants, is zero with subscript formatting, not a lowercase letter o.
-\item In American English, commas, semi-/colons, periods, question and exclamation marks are located within quotation marks only when a complete thought or name is cited, such as a title or full quotation. When quotation marks are used, instead of a bold or italic typeface, to highlight a word or phrase, punctuation should appear outside of the quotation marks. A parenthetical phrase or statement at the end of a sentence is punctuated outside of the closing parenthesis (like this). (A parenthetical sentence is punctuated within the parentheses.)
-\item A graph within a graph is an inset, not an insert. The word alternatively is preferred to the word alternately (unless you really mean something that alternates).
-\item Do not use the word essentially to mean approximately or effectively.
-\item In your paper title, if the words that uses can accurately replace the word using, capitalize the u; if not, keep using lower-cased.
-\item Be aware of the different meanings of the homophones affect and effect, complement and compliment, discreet and discrete, principal and principle.
-\item Do not confuse imply and infer.
-\item The prefix non is not a word; it should be joined to the word it modifies, usually without a hyphen.
-\item There is no period after the et in the Latin abbreviation et al..
-\item The abbreviation i.e. means that is, and the abbreviation e.g. means for example.
-
-\end{itemize}
+接著，本研究將進行三項不同層面的關鍵字分析。第一項分析是依粉絲專頁分析。
 
 \section*{四、研究結果與討論}
 
