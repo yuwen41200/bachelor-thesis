@@ -2030,23 +2030,27 @@
 \else \hbox to\hsize{\footnotesize\box\@tempboxa\hfil}%
 \fi\fi\fi}
 
+\let\@figurename\relax
+\def\figurename#1{\def\@figurename{#1}}
+\let\@tablename\relax
+\def\tablename#1{\def\@tablename{#1}}
 
 \newcounter{figure}
 \def\thefigure{\@arabic\c@figure}
 \def\fps@figure{tbp}
 \def\ftype@figure{1}
 \def\ext@figure{lof}
-\def\fnum@figure{Fig.~\thefigure}
+\def\fnum@figure{\@figurename~\thefigure}
 \def\figure{\@float{figure}}
 \let\endfigure\end@float
 \@namedef{figure*}{\@dblfloat{figure}}
 \@namedef{endfigure*}{\end@dblfloat}
 \newcounter{table}
-\def\thetable{\@Roman\c@table}
+\def\thetable{\@arabic\c@table}
 \def\fps@table{tbp}
 \def\ftype@table{2}
 \def\ext@table{lot}
-\def\fnum@table{TABLE~\thetable}
+\def\fnum@table{\@tablename~\thetable}
 % V1.6 IEEE uses 8pt text for tables
 % to default to footnotesize, we hack into LaTeX2e's \@floatboxreset and pray
 \def\table{\def\@floatboxreset{\reset@font\footnotesize\@setminipage}\@float{table}}

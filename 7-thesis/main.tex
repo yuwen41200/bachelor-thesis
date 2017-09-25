@@ -15,7 +15,7 @@
 % on the last page of the document
 
 % The following packages can be found on http:\\www.ctan.org
-%\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{graphicx} % for pdf, bitmapped graphics files
 %\usepackage{epsfig} % for postscript graphics files
 %\usepackage{mathptmx} % assumes new font selection scheme installed
 %\usepackage{times} % assumes new font selection scheme installed
@@ -41,6 +41,8 @@
 \begin{CJK*}{UTF8}{bsmi}
 \onehalfspacing
 \refname{參考文獻}
+\figurename{圖}
+\tablename{表}
 
 \maketitle
 \thispagestyle{empty}
@@ -348,49 +350,48 @@ SnowNLP\,是一套針對中文的文本處理函式庫，惟其訓練資料僅�
 
 \section*{四、研究結果與討論}
 
-Use this sample document as your LaTeX source file to create your document. Save this file as {\bf root.tex}. You have to make sure to use the cls file that came with this distribution. If you use a different style file, you cannot expect to get required margins. Note also that when you are creating your out PDF file, the source file is only part of the equation. {\it Your \TeX\ $\rightarrow$ PDF filter determines the output file size. Even if you make all the specifications to output a letter file in the source - if you filter is set to produce A4, you will only get A4 output. }
+在這裡輸入文字。
 
-It is impossible to account for all possible situation, one would encounter using \TeX. If you are using multiple \TeX\ files you must make sure that the ``MAIN`` source file is called root.tex - this is particularly important if your conference is using PaperPlaza's built in \TeX\ to PDF conversion tool.
+\subsection*{總體分佈（overall distribution）}
 
-\subsection{Headings, etc}
+在這裡輸入文字。
 
-Text heads organize the topics on a relational, hierarchical basis. For example, the paper title is the primary text head because all subsequent material relates and elaborates on this one topic. If there are two or more sub-topics, the next level head (uppercase Roman numerals) should be used and, conversely, if there are not at least two sub-topics, then no subheads should be introduced. Styles named Heading 1, Heading 2, Heading 3, and Heading 4 are prescribed.
+\subsection*{關鍵字擷取（keyword extraction）}
 
-\subsection{Figures and Tables}
+在這裡輸入文字。
 
-Positioning Figures and Tables: Place figures and tables at the top and bottom of columns. Avoid placing them in the middle of columns. Large figures and tables may span across both columns. Figure captions should be below the figures; table heads should appear above the tables. Insert figures and tables after they are cited in the text. Use the abbreviation Fig. 1, even at the beginning of a sentence.
+\subsection*{情感分析（sentiment analysis）}
 
-\begin{table}[h]
-\caption{An Example of a Table}
-\label{table_example}
+結果見表\,\ref{t1}。
+
+\begin{table}[!htbp]
+\caption{這是一張表格}
+\label{t1}
 \begin{center}
-\begin{tabular}{|c||c|}
+\begin{tabular}{|c|c|}
 \hline
-One & Two\\
+cell1 & cell2 \\
 \hline
-Three & Four\\
+cell3 & cell4 \\
 \hline
 \end{tabular}
 \end{center}
 \end{table}
 
+\subsection*{社會互動（social interaction）}
 
-   \begin{figure}[thpb]
-      \centering
-      \framebox{\parbox{3in}{We suggest that you use a text box to insert a graphic (which is ideally a 300 dpi TIFF or EPS file, with all fonts embedded) because, in an document, this method is somewhat more stable than directly inserting a picture.
-}}
-      %\includegraphics[scale=1.0]{figurefile}
-      \caption{Inductance of oscillation winding on amorphous
-       magnetic core versus DC bias magnetic field}
-      \label{figurelabel}
-   \end{figure}
-   
+結果見圖\,\ref{f1}。
 
-Figure Labels: Use 8 point Times New Roman for Figure labels. Use words rather than symbols or abbreviations when writing Figure axis labels to avoid confusing the reader. As an example, write the quantity Magnetization, or Magnetization, M, not just M. If including units in the label, present them within parentheses. Do not label axes only with units. In the example, write Magnetization (A/m) or Magnetization {A[m(1)]}, not just A/m. Do not label axes with a ratio of quantities and units. For example, write Temperature (K), not Temperature/K.
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\columnwidth]{quantity_time_graph}
+\caption{這是一張圖片}
+\label{f1}
+\end{figure}
 
 \section*{五、結論}
 
-A conclusion section is not required. Although a conclusion may review the main points of the paper, do not replicate the abstract as the conclusion. A conclusion might elaborate on the importance of the work or suggest applications and extensions. 
+在這裡輸入文字。
 
 \addtolength{\textheight}{-12cm}  % This command serves to balance the column lengths
                                   % on the last page of the document manually. It shortens
@@ -403,12 +404,13 @@ A conclusion section is not required. Although a conclusion may review the main 
 
 \section*{附錄}
 
-Appendixes should appear before the acknowledgment.
+在這裡輸入文字。
 
 \section*{誌謝}
 
 首先，我要感謝我的指導教授孫春在教授，對我的研究給予了許多寶貴的建議。
 另外，我要感謝中央研究院資訊科學研究所中文詞知識庫小組，提供中文斷詞線上服務。
+有您們的協助，這份研究才得以順利完成。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
