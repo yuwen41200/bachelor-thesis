@@ -38,7 +38,7 @@
 }
 
 \begin{document}
-\begin{CJK*}{UTF8}{bsmi}
+\begin{CJK}{UTF8}{bsmi}
 \onehalfspacing
 \refname{參考文獻}
 \figurename{圖}
@@ -355,8 +355,14 @@ SnowNLP\,是一套針對中文的文本處理函式庫，惟其訓練資料僅�
 另外，關於此模型的實作，在一些細節上我也有特別處理。
 譬如，我使用對數以避免浮點下溢（floating point underflow），我使用拉普拉斯平滑法（Laplace smoothing）以避免計算結果為零。
 
-我從所有貼文中隨機選取\,948\,筆（約\,5\%）作為訓練資料，這些訓練資料由我手動標記情感類型。
-這些選中的貼文呈均勻分佈（uniform distribution），以確保訓練資料的代表性。
+我從所有貼文中隨機選取\,948\,筆（約\,5\%）作為訓練／測試資料，這些訓練／測試資料由我手動標記情感類型。
+這些選中的貼文呈均勻分佈（uniform distribution），以確保訓練／測試資料的代表性。
+在這裡我也用了\,Matplotlib\,來視覺化訓練／測試資料各情感類型的分佈。
+
+我使用十等分交叉驗證（10-fold cross-validation）來評估模型的正確率。
+將訓練／測試資料分成十等分，其中一分作為測試資料，其餘九分作為訓練資料。
+重覆十次，每次選不同分當測試資料，得到十個正確率估計值。
+取其平均，即為此模型最終的正確率。
 
 \subsection*{社會互動（social interaction）}
 
@@ -431,5 +437,5 @@ cell3 & cell4 \\
 \bibliographystyle{ieeetr}
 \bibliography{citation}
 
-\end{CJK*}
+\end{CJK}
 \end{document}
