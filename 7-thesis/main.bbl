@@ -1,0 +1,80 @@
+\begin{thebibliography}{10}
+
+\bibitem{c1}
+A.~O. Larsson and H.~Moe, ``Studying political microblogging: Twitter users in
+  the 2010 swedish election campaign,'' {\em New Media \& Society}, vol.~14,
+  no.~5, pp.~729--747, 2012.
+
+\bibitem{c2}
+W.~Zhang, T.~J. Johnson, T.~Seltzer, and S.~L. Bichard, ``The revolution will
+  be networked,'' {\em Social Science Computer Review}, vol.~28, no.~1,
+  pp.~75--92, 2010.
+
+\bibitem{c3}
+B.~Hosch-Dayican, C.~Amrit, K.~Aarts, and A.~Dassen, ``How do online citizens
+  persuade fellow voters? {Using} twitter during the 2012 dutch parliamentary
+  election campaign,'' {\em Social Science Computer Review}, vol.~34, no.~2,
+  pp.~135--152, 2016.
+
+\bibitem{c4}
+{Socialbakers}, ``Definitive portal for social media statistics globally.''
+  \url{https://www.socialbakers.com/statistics/}.
+\newblock Accessed: 2016-09-28.
+
+\bibitem{c5}
+{Likeboy FB Ranking}, ``台灣粉絲團總排名名單.''
+  \url{http://likeboy.tw}.
+\newblock Accessed: 2016-09-28.
+
+\bibitem{c6}
+{中央研究院資訊科學研究所中文詞知識庫小組},
+  ``中文斷詞系統.'' \url{http://ckipsvr.iis.sinica.edu.tw}.
+\newblock Accessed: 2016-10-08.
+
+\bibitem{c7}
+Y.-W. Pwu, ``ckip-client: A {Python} client for {CKIP Chinese Word Segmentation
+  System}.'' \url{https://pypi.python.org/pypi/ckip-client}.
+\newblock Accessed: 2016-10-08.
+
+\bibitem{c8}
+C.~Leifer, ``peewee: A small, expressive {ORM}.''
+  \url{http://docs.peewee-orm.com}.
+\newblock Accessed: 2016-10-08.
+
+\bibitem{c9}
+W.~McKinney, ``Data structures for statistical computing in {Python},'' in {\em
+  Proceedings of the 9th Python in Science Conference} (S.~van~der Walt and
+  J.~Millman, eds.), pp.~51--56, 2010.
+
+\bibitem{c10}
+J.~D. Hunter, ``Matplotlib: A {2D} graphics environment,'' {\em Computing In
+  Science \& Engineering}, vol.~9, no.~3, pp.~90--95, 2007.
+
+\bibitem{c11}
+{R. Wang (isnowfy)}, ``{SnowNLP}: Simplified chinese text processing.''
+  \url{https://github.com/isnowfy/snownlp}.
+\newblock Accessed: 2017-02-16.
+
+\bibitem{c12}
+R.~Mihalcea and P.~Tarau, ``{TextRank}: Bringing order into texts,'' in {\em
+  Proceedings of the 2004 Conference on Empirical Methods in Natural Language
+  Processing} (D.~Lin and D.~Wu, eds.), (Barcelona, Spain), pp.~404--411,
+  Association for Computational Linguistics, July 2004.
+
+\bibitem{c13}
+C.~D. Manning, P.~Raghavan, and H.~Schütze, {\em Introduction to Information
+  Retrieval}.
+\newblock Cambridge University Press, 2008.
+
+\bibitem{c14}
+D.~Jurafsky and C.~D. Manning, ``Natural language processing: Lecture slides
+  from the {Stanford} {Coursera} course.''
+  \url{http://web.stanford.edu/~jurafsky/NLPCourseraSlides.html}.
+\newblock Accessed: 2017-02-18.
+
+\bibitem{c15}
+M.~Bastian, S.~Heymann, and M.~Jacomy, ``Gephi: An open source software for
+  exploring and manipulating networks,'' in {\em International AAAI Conference
+  on Weblogs and Social Media}, 2009.
+
+\end{thebibliography}
