@@ -303,7 +303,7 @@ INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu6b.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu52.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu90.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu4f.tfm
-INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu89.tfm
+INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu6a.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu51.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu67.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu61.tfm
@@ -332,8 +332,8 @@ INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu5a.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu5c.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu71.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu9e.tfm
-INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu6a.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu7b.tfm
+INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu89.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu64.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu78.tfm
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu91.tfm
@@ -387,12 +387,7 @@ INPUT kun.png
 INPUT ./kun.png
 INPUT ./kun.png
 INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu9d.tfm
-INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu31.tfm
-INPUT kun.png
-INPUT ./kun.png
-INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu94.tfm
-INPUT kun.png
-INPUT ./kun.png
+INPUT /usr/share/texmf/fonts/tfm/arphic/bsmiu/bsmiu96.tfm
 INPUT sna.png
 INPUT ./sna.png
 INPUT ./sna.png
@@ -422,7 +417,6 @@ INPUT ./main.out
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu03.pfb
 INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu30.pfb
-INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu31.pfb
 INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu4e.pfb
 INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu4f.pfb
 INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu50.pfb
@@ -492,7 +486,6 @@ INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu90.pfb
 INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu91.pfb
 INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu92.pfb
 INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu93.pfb
-INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu94.pfb
 INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu95.pfb
 INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu96.pfb
 INPUT /usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu97.pfb
