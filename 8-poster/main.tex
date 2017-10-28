@@ -1,0 +1,107 @@
+% based on poster for ASE 2009 by Martin Weiglhofer
+
+\documentclass[final,hyperref={pdfpagelabels=false}]{beamer}
+\mode<presentation>{\usetheme{TUGraz}}
+
+\usepackage{CJKutf8}
+\usepackage{amsmath,amsthm,amssymb,latexsym}
+\usepackage{epsfig}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{algpseudocode}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
+
+\institute[INST]{Institute Name}
+\date[CONF 2017]{Conference Title 2017}
+\subject{CONF 2017}
+\title{Research Title}
+\author[ywpu]{Author Name}
+\mail{ywpu@cs.nctu.edu.tw}
+\webpage{http://ywpu.me/}
+
+\begin{document}
+\begin{CJK}{UTF8}{bsmi}
+\begin{frame}
+\centering
+
+\begin{block}{為什麼編不過}
+\begin{minipage}{0.64\paperwidth}
+  \begin{itemize}
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字：\\\textbf{在這裡輸入文字。}
+  \end{itemize}
+\end{minipage}
+\qquad
+\begin{minipage}{0.29\paperwidth}
+  \begin{center}
+    在這裡輸入文字。
+  \end{center}
+\end{minipage}
+\end{block}
+
+\begin{block}{英文才編得過}
+  在這裡輸入文字，在這裡輸入文字，在這裡輸入文字，%
+  在這裡輸入文字，在這裡輸入文字，在這裡輸入文字。%
+  \vspace*{10mm}
+  \begin{center}
+    在這裡輸入文字。
+  \end{center}
+\end{block}
+
+\begin{minipage}{0.395\textwidth}
+\begin{block}{這是一串中文}
+  \begin{itemize}
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+    \begin{center}
+      \epsfig{file=faultdist,width=0.73\columnwidth}
+    \end{center}
+  \end{itemize}
+\end{block}
+\end{minipage}
+\quad
+\begin{minipage}{0.585\textwidth}
+\begin{block}{不知道要打什麼}
+  \begin{center}
+    在這裡輸入文字。
+    \vspace*{8mm}
+  \end{center}
+  \begin{itemize}
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+  \end{itemize}
+\end{block}
+\end{minipage}
+
+\begin{minipage}{0.64\textwidth}
+\begin{block}{參考文獻節錄}
+  \nocite{*}
+  \bibliographystyle{IEEEtran}
+  \bibliography{citation}  
+\end{block}
+\end{minipage}
+\quad
+\begin{minipage}{0.34\textwidth}
+\begin{alertblock}{\textbf{摘要}}
+  \begin{itemize}
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+    \item 在這裡輸入文字。
+  \end{itemize}
+\end{alertblock}
+\end{minipage}
+
+\end{frame}
+\end{CJK}
+\end{document}
