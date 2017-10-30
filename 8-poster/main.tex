@@ -45,6 +45,8 @@
 \begin{center}
 \begin{minipage}{0.43\textwidth}
   \begin{figure}[!htbp]
+  \setlength{\abovecaptionskip}{0pt plus 0pt minus 0pt}
+  \setlength{\belowcaptionskip}{0pt plus 0pt minus 0pt}
   \centering
   \includegraphics[width=\columnwidth]{quantity_time_graph}
   \caption{貼文數量對時間的關係圖}
@@ -54,6 +56,8 @@
 \quad
 \begin{minipage}{0.43\textwidth}
   \begin{figure}[!htbp]
+  \setlength{\abovecaptionskip}{0pt plus 0pt minus 0pt}
+  \setlength{\belowcaptionskip}{0pt plus 0pt minus 0pt}
   \centering
   \includegraphics[width=\columnwidth]{quantity_time_cumulative_graph}
   \caption{累計貼文數量對時間的關係圖}
@@ -205,6 +209,8 @@
 \quad
 \begin{minipage}{0.25\textwidth}
   \begin{figure}[!htbp]
+  \setlength{\abovecaptionskip}{0pt plus 0pt minus 0pt}
+  \setlength{\belowcaptionskip}{0pt plus 0pt minus 0pt}
   \centering
   \includegraphics[width=\columnwidth]{meta}
   \caption{訓練／測試貼文的分佈圖}
@@ -214,11 +220,10 @@
 \end{block}
 \end{minipage}
 
-\begin{minipage}{0.68\textwidth}
+\begin{minipage}{0.65\textwidth}
 \begin{block}{社會互動}
-\begin{minipage}{0.50\textwidth}
-  本部份探討的是社群網站上的「分享」網絡，分析使用者分享的貼文／連結的來源，用 Gephi 畫出社會網絡圖。%
-  本研究從全部貼文中，一共整理出 12,428 筆分享紀錄。
+\begin{minipage}{0.54\textwidth}
+  本研究從全部貼文中，一共整理出 12,428 筆分享紀錄。%
   從圖 \ref{f4} 我們可以發現一些規則，例如，%
   nagee 較常分享蘋果日報及批踢踢的消息；Taiwan Fugue 較常分享自由時報及蘋果日報的消息；%
   白色正義聯盟較常分享聯合新聞網的消息；我是台灣人 (I am Taiwanese) 較常分享綠黨的消息等等。%
@@ -230,10 +235,13 @@
   從這裡我們或許也能看出各消息來源在使用者心中的可信度。%
 \end{minipage}
 \quad
-\begin{minipage}{0.43\textwidth}
+\begin{minipage}{0.39\textwidth}
   \begin{figure}[!htbp]
+  \setlength{\abovecaptionskip}{0pt plus 0pt minus 0pt}
+  \setlength{\belowcaptionskip}{0pt plus 0pt minus 0pt}
   \centering
-  \includegraphics[width=\columnwidth]{sna_sm}
+  %\includegraphics[width=\columnwidth]{sna_sm}
+  \includegraphics[width=\columnwidth]{sna}
   \caption{貼文／連結的「分享」網絡圖}
   \label{f4}
   \end{figure}
@@ -241,7 +249,7 @@
 \end{block}
 \end{minipage}
 \quad
-\begin{minipage}{0.30\textwidth}
+\begin{minipage}{0.33\textwidth}
 \begin{block}{重要參考文獻}
   \nocite{*}
   \bibliographystyle{IEEEtran}
