@@ -17,7 +17,7 @@
 
 \institute[nctucs]{國立交通大學資訊工程學系}
 \title{社群網站上之政治活動分析：以台灣{\fontfamily{cmr}\selectfont\,2016\,}年總統選舉為例}
-\author[ywpu]{學生：蒲郁文\hspace*{1 in}指導教授：孫春在 教授}
+\author[ywpu]{學生：蒲郁文\hspace*{1in}指導教授：孫春在 教授}
 \mail{ywpu@cs.nctu.edu.tw}
 \webpage{http://ywpu.me/}
 
@@ -164,9 +164,20 @@
 \end{block}
 \end{minipage}
 
-\begin{minipage}{0.59\textwidth}
-\begin{block}{這是一串中文}
-
+\begin{minipage}{\textwidth}
+\begin{block}{情感分析}
+\begin{minipage}{0.31\textwidth}
+  本情感分類模型的正確率達 86.82\%。%
+  本研究發現，此次選舉只有 26.63\% 的社群媒體貼文是攻擊型競選。%
+  許多政治人物都不常使用攻擊型競選，然而，具鮮明政治立場，或以抨擊反對陣營為目的的意見領袖，則較常使用攻擊型競選。%
+  Taiwan Fugue、反馬英九聯盟、不禮貌鄉民團、藍白拖的逆襲等粉絲專頁攻擊型競選貼文的比例皆超過八成。%
+  對此，有一種可能的情形是，政治人物在其官方粉絲專頁上保持正面競選的形象，但在暗中卻支持其他非官方的粉絲專頁攻擊、批評其反對者。%
+  使用攻擊型競選的比例並未隨著時間而有太大的變化，唯有在 11 月 1 日至 11 月 8 日間，%
+  或許是因為舉行兩岸領導人會面的緣故，攻擊型競選貼文的比例創下高峰，比平時高出了一成左右。%
+  另外，使用攻擊型競選的比例則在投票日前一週達到最低點，比平時低了 5\% 左右。%
+\end{minipage}
+\quad
+\begin{minipage}{0.39\textwidth}
   \begin{table}[!htbp]
   \caption{貼文情感分析（節錄）}
   \label{t5}
@@ -175,7 +186,7 @@
   　\newline粉絲專頁名稱\newline　 & %
   　\,01/10\newline\hspace*{1.25em}$\vert$\newline01/17 & %
   　\,01/03\newline\hspace*{1.25em}$\vert$\newline01/10 & %
-  　\newline$\ldots$\newline　 & %
+  　\newline\,$\ldots$\newline　 & %
   　\,10/17\newline\hspace*{1.25em}$\vert$\newline10/25 & %
   　{\bfseries 　所有　　時間　　區間} \\
   \midrule
@@ -190,43 +201,52 @@
   \bottomrule
   \end{tabular}
   \end{table}
+\end{minipage}
+\quad
+\begin{minipage}{0.25\textwidth}
+  \begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{meta}
+  \caption{訓練／測試貼文的分佈圖}
+  \label{f3}
+  \end{figure}
+\end{minipage}
+\end{block}
+\end{minipage}
 
+\begin{minipage}{0.68\textwidth}
+\begin{block}{社會互動}
+\begin{minipage}{0.50\textwidth}
+  本部份探討的是社群網站上的「分享」網絡，分析使用者分享的貼文／連結的來源，用 Gephi 畫出社會網絡圖。%
+  本研究從全部貼文中，一共整理出 12,428 筆分享紀錄。
+  從圖 \ref{f4} 我們可以發現一些規則，例如，%
+  nagee 較常分享蘋果日報及批踢踢的消息；Taiwan Fugue 較常分享自由時報及蘋果日報的消息；%
+  白色正義聯盟較常分享聯合新聞網的消息；我是台灣人 (I am Taiwanese) 較常分享綠黨的消息等等。%
+  另外，此圖也呈現出各政黨／侯選人／意見領袖之間的關係。%
+  例如苗博雅、呂欣潔和范雲皆屬於同一個政黨，因此他們在圖中也屬於同一個社群。%
+  同樣地，白色正義聯盟、挺馬英九聯盟和藍白拖的逆襲彼此有相近的政治立場，因此他們在圖中的位置也比較相近。%
+  最後，從圖中圓點的大小，我們還可以看出哪些消息來源最常被人們引用。%
+  在此次選舉中最常被人們引用的消息來源是 YouTube、自由時報、蘋果日報和聯合新聞網等等。%
+  從這裡我們或許也能看出各消息來源在使用者心中的可信度。%
+\end{minipage}
+\quad
+\begin{minipage}{0.43\textwidth}
+  \begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{sna_sm}
+  \caption{貼文／連結的「分享」網絡圖}
+  \label{f4}
+  \end{figure}
+\end{minipage}
 \end{block}
 \end{minipage}
 \quad
-\begin{minipage}{0.39\textwidth}
-\begin{block}{不知道要打什麼}
-  \begin{center}
-    在這裡輸入文字。
-    \vspace*{8mm}
-  \end{center}
-  \begin{itemize}
-    \item 在這裡輸入文字。
-    \item 在這裡輸入文字。
-    \item 在這裡輸入文字。
-    \item 在這裡輸入文字。
-    \item 在這裡輸入文字。
-    \item 在這裡輸入文字。
-  \end{itemize}
-\end{block}
-\end{minipage}
-
-\begin{minipage}{0.64\textwidth}
+\begin{minipage}{0.30\textwidth}
 \begin{block}{重要參考文獻}
   \nocite{*}
   \bibliographystyle{IEEEtran}
   \bibliography{citation}  
 \end{block}
-\end{minipage}
-\quad
-\begin{minipage}{0.34\textwidth}
-\begin{alertblock}{\textbf{摘要}}
-  \begin{itemize}
-    \item 在這裡輸入文字。
-    \item 在這裡輸入文字。
-    \item 在這裡輸入文字。
-  \end{itemize}
-\end{alertblock}
 \end{minipage}
 
 \end{frame}
