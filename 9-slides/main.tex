@@ -1,0 +1,138 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Madrid}
+  \usecolortheme{default}
+  \usefonttheme{default}
+  \setbeamertemplate{caption}[numbered]
+}
+
+\usepackage{CJKutf8}
+\usepackage[USenglish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{ragged2e}
+
+\title[Analysis of Political Activities on SNS]{社群網站上之政治活動分析}
+\subtitle{以台灣 2016 年總統選舉為例}
+\author[Yu Wen Pwu]{蒲郁文}
+\institute[NCTU]{國立交通大學資訊工程學系}
+\date[Undergraduate Research]{106A 學士班專題競賽}
+
+\begin{document}
+\begin{CJK}{UTF8}{bkai}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+\begin{block}{摘要}
+\justifying
+\qquad 本研究嘗試使用關鍵字擷取（keyword extraction）、%
+情感分析（sentiment analysis）、社會網絡分析（social network analysis）等方法，%
+分析 2016 年台灣總統選舉競選期間臉書各大政治性粉絲專頁之公開資料，探討使用者於社群網站上之政治活動的模式。%
+本研究發現此次選舉有 26.63\% 的社群媒體貼文是攻擊型競選，與台灣、中國或中國國民黨有關的議題是人們最關注的焦點，%
+且特定族群會傾向於分享特定來源的資訊。%
+同時，本研究也提供了後續研究者一套有效地自動化分析線上政治活動的方法。%
+\vskip 1em
+關鍵字\enskip---\enskip社群媒體、自動化內容分析、社會網絡分析、數位行動主義、政治參與%
+\end{block}
+\end{frame}
+
+\begin{frame}{研究問題}
+  \tableofcontents
+\end{frame}
+
+\section{
+各政黨／侯選人／意見領袖分別發佈了多少篇貼文？\texorpdfstring{\protect\\}{}
+\hspace{.35em}每日的貼文數量隨著時間有什麼樣的改變？
+}
+
+\section{
+各政黨／侯選人／意見領袖最關心的議題是什麼？\texorpdfstring{\protect\\}{}
+\hspace{.35em}人們關注的焦點隨著時間有什麼樣的改變？\texorpdfstring{\protect\\}{}
+\hspace{.35em}本次選舉人們最關心什麼？
+}
+
+\section{
+哪些政黨／候選人／意見領袖最常使用攻擊型競選？\texorpdfstring{\protect\\}{}
+\hspace{.35em}什麼時候人們最常使用攻擊型競選？\texorpdfstring{\protect\\}{}
+\hspace{.35em}本次選舉有多少比例的貼文是攻擊型競選？
+}
+
+\section{
+各發文者與其分享的資訊的來源有什麼樣的關係？\texorpdfstring{\protect\\}{}
+\hspace{.35em}特定族群是否會傾向於分享特定來源的資訊？
+}
+
+\begin{frame}{資料蒐集}
+\begin{itemize}
+\item 資料集：2016 年台灣總統選舉競選期間臉書各大政治性粉絲專頁之公開資料
+\item 時間範圍：投票日前三個月至投票日止
+\item 資料總數：18,967 筆臉書貼文，來自 135 個台灣熱門的政治性粉\\絲專頁
+\item 蒐集方法：
+  \begin{itemize}
+  \item 使用 Facebook Graph API
+  \item 參考 Socialbakers 及 Likeboy 提供之社群媒體統計數據，輔以我個\\人的自身經驗，決定欲蒐集的粉絲專頁清單
+  \item 查詢這些粉絲專頁最新的按讚數，只保留擁有超過一萬個讚的粉絲專頁
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{斷詞}
+\begin{itemize}
+\item 採用中央研究院資訊科學研究所中文詞知識庫小組所研發之\\中文斷詞系統
+  \begin{itemize}
+  \item 對台灣本地的文本有較好的表現
+  \item 具有良好的未知詞辨識能力
+  \end{itemize}
+\item 斷詞前先對貼文進行預處理
+\item 使用物件關係對映與資料庫存放資料
+\end{itemize}
+\end{frame}
+
+\begin{frame}{總體分佈}
+\begin{itemize}
+\item 使用 pandas、Matplotlib、Plotly 等函式庫
+\item 繪製貼文數量對時間的關係圖
+\item 繪製累計貼文數量對時間的關係圖
+\item 統計各粉絲專頁分別有多少筆貼文、佔全部貼文的百分比
+\end{itemize}
+\end{frame}
+
+\begin{frame}{關鍵字擷取}
+\begin{itemize}
+\item 使用 SnowNLP 函式庫實作的 TextRank 演算法
+  \begin{itemize}
+  \item 衍生自 PageRank 演算法
+  \item 不需輸入全部文本 (cf. tf--idf)
+  \end{itemize}
+\item 改良 SnowNLP 函式庫提供的停用字清單
+\item 合併範圍內的貼文進行分析
+\item 分析各粉絲專頁發佈的貼文的關鍵字
+\item 分析各時間區間發佈的貼文的關鍵字
+\item 分析整個競選期間所有人發佈的貼文的關鍵字
+\end{itemize}
+\end{frame}
+
+\begin{frame}{情感分析}
+\begin{itemize}
+\item 將全部貼文分為兩個類別
+  \begin{itemize}
+  \item 攻擊型競選：貼文內容是以批評反對陣營為主、貼文重點是在批評反對陣營
+  \item 說服型競選：非屬攻擊型競選的貼文（包含中立貼文）
+  \end{itemize}
+\item 分析每筆貼文的情感，再進行統計
+\item 自行實作單純貝氏分類器
+  \begin{itemize}
+  \item 二元化多項單純貝氏（binarized multinomial naive Bayes）模型
+  \item 只管一個單詞在一篇文章中有沒有出現，不管該單詞在文中究竟出現了多少遍
+  \end{itemize}
+\item 均勻地選取 948 筆（約５％）貼文作為訓練與測試資料，人工標\\記情感類型
+\item 使用十等分交叉測試來評估模型的表現
+\end{itemize}
+\end{frame}
+
+\end{CJK}
+\end{document}
