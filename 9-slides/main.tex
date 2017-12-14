@@ -19,6 +19,13 @@
 \institute[NCTU]{國立交通大學資訊工程學系}
 \date[Undergraduate Research]{106A 學士班專題競賽}
 
+\AtBeginSection[]
+{
+  \begin{frame}{研究問題}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
 \begin{document}
 \begin{CJK}{UTF8}{bkai}
 
@@ -43,28 +50,6 @@
 \begin{frame}{研究問題}
   \tableofcontents
 \end{frame}
-
-\section{
-各政黨／侯選人／意見領袖分別發佈了多少篇貼文？\texorpdfstring{\protect\\}{}
-\hspace{.35em}每日的貼文數量隨著時間有什麼樣的改變？
-}
-
-\section{
-各政黨／侯選人／意見領袖最關心的議題是什麼？\texorpdfstring{\protect\\}{}
-\hspace{.35em}人們關注的焦點隨著時間有什麼樣的改變？\texorpdfstring{\protect\\}{}
-\hspace{.35em}本次選舉人們最關心什麼？
-}
-
-\section{
-哪些政黨／候選人／意見領袖最常使用攻擊型競選？\texorpdfstring{\protect\\}{}
-\hspace{.35em}什麼時候人們最常使用攻擊型競選？\texorpdfstring{\protect\\}{}
-\hspace{.35em}本次選舉有多少比例的貼文是攻擊型競選？
-}
-
-\section{
-各發文者與其分享的資訊的來源有什麼樣的關係？\texorpdfstring{\protect\\}{}
-\hspace{.35em}特定族群是否會傾向於分享特定來源的資訊？
-}
 
 \begin{frame}{資料蒐集}
 \begin{itemize}
@@ -92,6 +77,11 @@
 \end{itemize}
 \end{frame}
 
+\section{
+各政黨／侯選人／意見領袖分別發佈了多少篇貼文？\texorpdfstring{\protect\\}{}
+\hspace{.35em}每日的貼文數量隨著時間有什麼樣的改變？
+}
+
 \begin{frame}{總體分佈}
 \begin{itemize}
 \item 使用 pandas、Matplotlib、Plotly 等函式庫
@@ -100,6 +90,12 @@
 \item 統計各粉絲專頁分別有多少筆貼文、佔全部貼文的百分比
 \end{itemize}
 \end{frame}
+
+\section{
+各政黨／侯選人／意見領袖最關心的議題是什麼？\texorpdfstring{\protect\\}{}
+\hspace{.35em}人們關注的焦點隨著時間有什麼樣的改變？\texorpdfstring{\protect\\}{}
+\hspace{.35em}本次選舉人們最關心什麼？
+}
 
 \begin{frame}{關鍵字擷取}
 \begin{itemize}
@@ -116,6 +112,12 @@
 \end{itemize}
 \end{frame}
 
+\section{
+哪些政黨／候選人／意見領袖最常使用攻擊型競選？\texorpdfstring{\protect\\}{}
+\hspace{.35em}什麼時候人們最常使用攻擊型競選？\texorpdfstring{\protect\\}{}
+\hspace{.35em}本次選舉有多少比例的貼文是攻擊型競選？
+}
+
 \begin{frame}{情感分析}
 \begin{itemize}
 \item 將全部貼文分為兩個類別
@@ -131,6 +133,32 @@
   \end{itemize}
 \item 均勻地選取 948 筆（約５％）貼文作為訓練與測試資料，人工標\\記情感類型
 \item 使用十等分交叉測試來評估模型的表現
+\end{itemize}
+\end{frame}
+
+\section{
+各發文者與其分享的資訊的來源有什麼樣的關係？\texorpdfstring{\protect\\}{}
+\hspace{.35em}特定族群是否會傾向於分享特定來源的資訊？
+}
+
+\begin{frame}{社會互動}
+\begin{itemize}
+\item 探討社群網站上的「分享」網絡
+\item 資料預處理
+  \begin{itemize}
+  \item 找出所有文本中的連結
+  \item 還原短網址
+  \item 找出臉書連結導向的粉絲專頁
+  \item 捨棄「自己分享自己的貼文」的紀錄
+  \end{itemize}
+\item 繪製各發文者與其分享的貼文／連結的來源之網絡圖
+  \begin{itemize}
+  \item 採用 Gephi 網絡視覺化軟體
+  \item Force Atlas 佈局演算法
+  \item 模組性（modularity）分析
+  \item HITS 網絡連結分析
+  \item 只保留分支度不小於 3 的節點
+  \end{itemize}
 \end{itemize}
 \end{frame}
 
