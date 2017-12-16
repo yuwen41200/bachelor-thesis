@@ -53,6 +53,8 @@ import math
 import pickle
 import random
 
+import numpy as np
+
 from models import *
 
 
@@ -140,18 +142,36 @@ def validate(testing_posts, testing_post_tags):
     assert len(testing_posts) == len(testing_post_tags)
     assert set(testing_post_tags) == {'pos', 'neg'}
     # assert testing_post_tags.count('pos') == testing_post_tags.count('neg')
-    hit_count = 0
+    true_positive = 0
+    false_positive = 0
+    true_negative = 0
+    false_negative = 0
     testing_post_tags_it = iter(testing_post_tags)
     for testing_post in testing_posts:
         post = Post.get(Post.id == testing_post)
         auto_tag = naive_bayes.apply(post.message)
         if next(testing_post_tags_it) == auto_tag:
-            hit_count += 1
             print('P', end='')
+            if auto_tag == 'neg':
+                true_positive += 1
+            elif auto_tag == 'pos':
+                true_negative += 1
+            else:
+                assert False
         else:
             print('F', end='')
+            if auto_tag == 'neg':
+                false_positive += 1
+            elif auto_tag == 'pos':
+                false_negative += 1
+            else:
+                assert False
     print()
-    return hit_count / len(testing_posts) * 100
+    accuracy = (true_positive + true_negative) / len(testing_posts)
+    precision = true_positive / (true_positive + false_positive)
+    recall = true_positive / (true_positive + false_negative)
+    f_measure = (2 * precision * recall) / (precision + recall)
+    return accuracy, precision, recall, f_measure
 
 
 def insert():
@@ -289,17 +309,25 @@ def ten_fold_cross_validation():
             os.fsync(file.fileno())
     os.system('cls' if os.name == 'nt' else 'clear')
     assert len(post_tags) == 948
-    accuracy_of_folds = []
+    metrics = []
     for i in range(10):
         prepare(posts[:i*95] + posts[(i+1)*95:], post_tags[:i*95] + post_tags[(i+1)*95:])
-        accuracy = validate(posts[i*95:(i+1)*95], post_tags[i*95:(i+1)*95])
-        print('Accuracy of fold ' + str(i+1) + ': ' + str(accuracy) + '%')
-        accuracy_of_folds.append(accuracy)
-    average_accuracy = sum(accuracy_of_folds) / len(accuracy_of_folds)
-    print('Average accuracy: ' + str(average_accuracy) + '%')
+        acc, ppv, tpr, f1 = validate(posts[i*95:(i+1)*95], post_tags[i*95:(i+1)*95])
+        print('Accuracy of fold ' + str(i+1) + ':    ' + str(acc * 100) + '%')
+        print('Precision of fold ' + str(i+1) + ':   ' + str(ppv * 100) + '%')
+        print('Recall of fold ' + str(i + 1) + ':    ' + str(tpr * 100) + '%')
+        print('F-measure of fold ' + str(i + 1) + ': ' + str(f1 * 100) + '%')
+        metrics.append([acc, ppv, tpr, f1])
+    mat = np.array(metrics)
+    avg = np.mean(mat, axis=0)
+    print('Average accuracy: ' + str(avg[0] * 100) + '%')
+    print('Average precision: ' + str(avg[1] * 100) + '%')
+    print('Average recall: ' + str(avg[2] * 100) + '%')
+    print('Average F-measure: ' + str(avg[3] * 100) + '%')
     prepare(posts, post_tags)
+
 
 if __name__ == '__main__':
     # init()
-    # ten_fold_cross_validation()
-    insert()
+    ten_fold_cross_validation()
+    # insert()
