@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {USenglish}
+\beamer@sectionintoc {1}{ 各政黨／侯選人／意見領袖分別發佈了多少篇貼文？\\ \hspace {.35em}每日的貼文數量隨著時間有什麼樣的改變？ }{6}{0}{1}
+\beamer@sectionintoc {2}{ 各政黨／侯選人／意見領袖最關心的議題是什麼？\\ \hspace {.35em}人們關注的焦點隨著時間有什麼樣的改變？\\ \hspace {.35em}本次選舉人們最關心什麼？ }{11}{0}{2}
+\beamer@sectionintoc {3}{ 哪些政黨／候選人／意見領袖最常使用攻擊型競選？\\ \hspace {.35em}什麼時候人們最常使用攻擊型競選？\\ \hspace {.35em}本次選舉有多少比例的貼文是攻擊型競選？ }{28}{0}{3}
+\beamer@sectionintoc {4}{ 各發文者與其分享的資訊的來源有什麼樣的關係？\\ \hspace {.35em}特定族群是否會傾向於分享特定來源的資訊？ }{33}{0}{4}
