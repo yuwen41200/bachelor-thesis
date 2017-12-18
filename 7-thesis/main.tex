@@ -2,10 +2,10 @@
 %2345678901234567890123456789012345678901234567890123456789012345678901234567890
 %        1         2         3         4         5         6         7         8
 
-\documentclass[a4paper, 10pt, conference]{ieeeconf}       % Comment this line out
-                                                          % if you need a4paper
-%\documentclass[letterpaper, 10pt, conference]{ieeeconf}  % Use this line for a4
+\documentclass[a4paper, 10pt, conference]{ieeeconf}       % Use this line for a4
                                                           % paper
+%\documentclass[letterpaper, 10pt, conference]{ieeeconf}  % Comment this line out
+                                                          % if you need a4paper
 
 \IEEEoverridecommandlockouts                              % This command is only
                                                           % needed if you want to
@@ -23,6 +23,7 @@
 %\usepackage{amssymb}  % assumes amsmath package installed
 \usepackage{CJKutf8}   % for Chinese character support
 \usepackage{setspace}  % Chinese characters need larger line height
+\usepackage[hyphens]{url} % improves linebreak in url
 \usepackage{hyperref}  % for citing websites in BibTeX
 \usepackage{booktabs}  % for publication quality tables
 \usepackage{longtable} % for multi-page tables
@@ -313,7 +314,7 @@
 \subsection*{總體分佈（overall distribution）}
 
 先對研究資料做最初步的分析。%
-使用 pandas 資料分析函式庫 \cite{c9} 和 Matplotlib 繪圖函式庫 \cite{c10} %
+使用 pandas 資料分析函式庫 \cite{c9} 和 Matplotlib、Plotly 等繪圖函式庫 \cite{c10, c16} %
 繪製貼文數量對時間的關係圖以及累計貼文數量對時間的關係圖。%
 另外，統計各粉絲專頁分別有多少筆貼文、佔全部貼文的百分比。%
 
@@ -407,12 +408,13 @@ SnowNLP 是一套針對中文的文本處理函式庫，惟其訓練資料僅包
 
 圖 \ref{f1} 是貼文數量對時間的關係圖，橫軸為時間，以日為單位，縱軸為貼文數量，以篇為單位。%
 圖 \ref{f2} 是累計貼文數量對時間的關係圖，橫軸為時間，以日為單位，縱軸為累計貼文數量，以篇為單位。%
-從這兩張圖我們可以看出，隨著投票日的接近，各政黨／侯選人／意見領袖也愈來愈踴躍地在社群網站上發佈貼文。%
+從這兩張圖我們可以看出貼文數量呈現週期性變化，每逢假日貼文數量就會顯著降低。%
+隨著投票日的接近，各政黨／侯選人／意見領袖也愈來愈踴躍地在社群網站上發佈貼文。%
 選舉前幾天的貼文數量更達到其餘時間的兩倍以上。%
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=\columnwidth]{quantity_time_graph}
+\includegraphics[width=\columnwidth]{quantity_time_graph_ng}
 \caption{貼文數量對時間的關係圖}
 \label{f1}
 \end{figure}
@@ -433,7 +435,7 @@ SnowNLP 是一套針對中文的文本處理函式庫，惟其訓練資料僅包
 \onecolumn
 
 \begin{longtable}[c]{@{}lcc@{}}
-\caption{各政黨／侯選人／意見領袖的貼文數量}
+\caption[]{\tabular[t]{@{}l@{}}各政黨／侯選人／意見領袖的貼文數量 \\ {\small（限於篇幅，僅節錄部份資料）}\endtabular}
 \label{t1}\\
 \toprule
 粉絲專頁名稱 & 貼文數量 & 百分比 \\* \midrule
@@ -486,7 +488,8 @@ BillyPan 潘建志醫師 & 306 & 1.61\% \\
 沃草 Watchout & 193 & 1.02\% \\
 林佳龍 & 190 & 1.00\% \\
 鍾佳濱 & 190 & 1.00\% \\
-苗博雅 MiaoPoya & 189 & 1.00\% \\
+苗博雅 MiaoPoya & 189 & 1.00\% \\* \bottomrule
+\iffalse
 徐永明 & 186 & 0.98\% \\
 趙正宇 & 185 & 0.98\% \\
 小聖蚊的治國日記 & 184 & 0.97\% \\
@@ -575,6 +578,7 @@ nagee & 96 & 0.51\% \\
 顧立雄 & 2 & 0.01\% \\
 Tumorectomy Project 割腫瘤計畫 & 1 & 0.01\% \\
 台大法律學生挺318 & 1 & 0.01\% \\* \bottomrule
+\fi
 \end{longtable}
 
 \begin{longtable}[c]{@{}L{2.45cm}L{1.1cm}L{1.1cm}L{1.1cm}L{1.1cm}L{1.1cm}L{1.1cm}L{1.1cm}L{1.41cm}L{1.1cm}L{1.1cm}@{}}
@@ -924,7 +928,7 @@ Tumorectomy Project 割腫瘤計畫 & 0/0 (-) & 0/0 (-) & 0/0 (-) & 0/0 (-) & 0/
 \end{landscape}
 
 \begin{figure}[!htbp]
-\makebox[\textwidth][c]{\includegraphics[width=\paperwidth]{sna}}%
+\makebox[\textwidth][c]{\includegraphics[width=\paperwidth]{sna_sm}}%
 \caption{貼文／連結的「分享」網絡圖}
 \label{f4}
 \end{figure}
