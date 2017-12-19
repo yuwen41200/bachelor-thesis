@@ -29,6 +29,7 @@
 \usepackage{longtable} % for multi-page tables
 \usepackage{array}     % for fixed column widths
 \usepackage{lscape}    % for landscape orientation
+\usepackage{caption}   % gives identical figure number
 
 \title{\LARGE \bf
 社群網站上之政治活動分析：以台灣 2016 年總統選舉為例$^{\ast}$
@@ -340,6 +341,14 @@ SnowNLP 是一套針對中文的文本處理函式庫，惟其訓練資料僅包
 本研究替換掉它的斷詞部份，只採用它的 TextRank 模組。%
 另外，本研究所使用的停用字（stop word）清單，則是以它的停用字清單為基礎加以改良而成的。%
 
+依上述方法完成分析後，我發現某些持續被廣泛爭論的議題會掩蓋掉其他短暫出現的議題，%
+使我們不容易找出不同時間區間人們關注的焦點的變化。%
+為此，我嘗試了另一種分析各時間點之熱門議題的方法 \cite{c17}。%
+首先，尋找出現次數有明顯高峰的單詞：找出所有出現超過一百次的單詞，統計這些單詞每日的出現率，%
+然後以「平均值$\,+\,2\,\times\,$標準差」為門檻，找出連續三日出現率高於門檻的單詞。%
+接著，找出在相近時間點出現高峰的單詞，組成詞組。再從詞組反推事件。%
+最後將事件中的每個單詞的出現率正規化，並繪圖。%
+
 \subsection*{情感分析（sentiment analysis）}
 
 一個範圍內的貼文，可能都是在談論相近的主題，但每篇貼文所傳達的情感卻有很大的差異，彼此毫無關連。%
@@ -356,6 +365,8 @@ SnowNLP 是一套針對中文的文本處理函式庫，惟其訓練資料僅包
 \,(1) 哪些政黨／候選人／意見領袖最常使用攻擊型競選？%
 \,(2) 什麼時候人們最常使用攻擊型競選？%
 \,(3) 本次選舉有多少比例的貼文是攻擊型競選？%
+
+\addtolength{\textheight}{-.65cm}
 
 在技術上，本研究使用了我自行實作的單純貝氏分類器（naive Bayes classifier）\cite{c13}。%
 單純貝氏分類器雖然原理簡單，但用在情感分析上卻有相當優異的表現。%
@@ -374,10 +385,11 @@ SnowNLP 是一套針對中文的文本處理函式庫，惟其訓練資料僅包
 這些選中的貼文呈均勻分佈（uniform distribution），以確保訓練／測試資料的代表性。%
 在這裡我也用了 Matplotlib 來視覺化訓練／測試資料各情感類型的分佈。%
 
-我使用十等分交叉驗證（10-fold cross-validation）來評估模型的正確率。%
+我使用十等分交叉驗證（10-fold cross-validation）來評估模型的表現（我並未使用此方法來決定模型）。%
 將訓練／測試資料分成十等分，其中一分作為測試資料，其餘九分作為訓練資料。%
-重覆十次，每次選不同分當測試資料，得到十個正確率估計值。%
-取其平均，即為此模型最終的正確率。%
+重覆十次，每次選不同分當測試資料，得到十組表現度量。%
+取其平均，即為此模型最終的表現度量。%
+最後再用所有已標記的資料來訓練。%
 
 \subsection*{社會互動（social interaction）}
 
@@ -398,8 +410,9 @@ SnowNLP 是一套針對中文的文本處理函式庫，惟其訓練資料僅包
 若該臉書連結並非導向粉絲專頁，貼捨棄該連結。%
 最後，排除「自己分享自己的貼文」的情況。%
 
-在網絡圖繪製的部份，我採用了「Force Atlas」佈局演算法（layout algorithm），此演算法最能清楚呈現本次探討的網絡。%
-另外，我也進行了模組性（modularity）分析來偵測社群（community）。%
+在網絡圖繪製的部份，我採用了 Force Atlas 佈局演算法（layout algorithm），此演算法最能清楚呈現本次探討的網絡。%
+接著，我也進行了模組性（modularity）分析來偵測社群（community）。%
+為了進一步了解使用者在網絡裡的行為模式，我還使用了 HITS 網絡連結分析。%
 最後，為了讓網絡圖更簡潔易讀，我只保留分支度（degree）不小於 3 的節點（node）。%
 
 \section*{四、研究結果與討論}
@@ -412,43 +425,31 @@ SnowNLP 是一套針對中文的文本處理函式庫，惟其訓練資料僅包
 隨著投票日的接近，各政黨／侯選人／意見領袖也愈來愈踴躍地在社群網站上發佈貼文。%
 選舉前幾天的貼文數量更達到其餘時間的兩倍以上。%
 
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=\columnwidth]{quantity_time_graph_ng}
-\caption{貼文數量對時間的關係圖}
-\label{f1}
-\end{figure}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=\columnwidth]{quantity_time_cumulative_graph}
-\caption{累計貼文數量對時間的關係圖}
-\label{f2}
-\end{figure}
-
 接下來，表 \ref{t1} 列出了各政黨／侯選人／意見領袖的貼文數量，並依貼文數量遞減排序。%
 發佈最多貼文的粉絲專頁是「柯建銘」，其貼文佔了全部貼文的 2.56\%。%
 此次選舉的三位總統候選人也都有相當高的貼文數。%
 此外，有幾個粉絲專頁在競選期間沒有發佈任何貼文（也可能是有發佈貼文但事後又被刪除，%
 或因故無法透過 Facebook Graph API 存取），因此並未出現在表上。%
 
-\onecolumn
+\subsection*{關鍵字擷取（keyword extraction）}
 
-\begin{longtable}[c]{@{}lcc@{}}
-\caption[]{\tabular[t]{@{}l@{}}各政黨／侯選人／意見領袖的貼文數量 \\ {\small（限於篇幅，僅節錄部份資料）}\endtabular}
-\label{t1}\\
+表 \ref{t2} 至表 \ref{t4} 是關鍵字擷取的結果，\#N 表示排名第 N 名的關鍵字。%
+表 \ref{t2} 是依作者劃分，表 \ref{t3} 是依時間劃分，表 \ref{t4} 則是合併了所有貼文。%
+本項分析的成果相當出色，從表 \ref{t2} 我們可以看出各政黨／侯選人／意見領袖重視的議題。%
+例如，「王丹网站 Wang Dan's Page」關注「中國」方面的議題，「中國國民黨 KMT」關注「朱立倫」、「經濟」、「兩岸」等事務，%
+「周芷萱　斬父權獨立劍　老娘就是反骨！」關注「女性」、「性別」等議題，「王金平」關注「國會」、「改革」等事務，%
+「綠黨」關注「勞工」、「環境」等議題，而「馬躍．比吼 Mayaw Biho」則關注「原住民」的「文化」和「土地」等等。%
+
+\addtolength{\textheight}{.65cm}
+
+\begin{table}[!htbp]
+\centering
+\caption[]{\tabular[t]{@{}l@{}}各政黨／侯選人／意見領袖的貼文數量 \\ {\small （限於篇幅，僅節錄部份資料）}\endtabular}
+\label{t1}
+\begin{tabular}{@{}lcc@{}}
 \toprule
-粉絲專頁名稱 & 貼文數量 & 百分比 \\* \midrule
-\endfirsthead
-\toprule
-粉絲專頁名稱 & 貼文數量 & 百分比 \\* \midrule
-\endhead
-%
-\bottomrule
-\endfoot
-%
-\endlastfoot
-%
+粉絲專頁名稱 & 貼文數量 & 百分比 \\
+\midrule
 柯建銘 & 485 & 2.56\% \\
 Taiwan Fugue & 361 & 1.90\% \\
 台灣新力量/羅致政粉絲團 & 337 & 1.78\% \\
@@ -486,10 +487,10 @@ BillyPan 潘建志醫師 & 306 & 1.61\% \\
 公民廟口-立委在做天在看 & 194 & 1.02\% \\
 時代力量 New Power Party & 194 & 1.02\% \\
 沃草 Watchout & 193 & 1.02\% \\
+\iffalse
 林佳龍 & 190 & 1.00\% \\
 鍾佳濱 & 190 & 1.00\% \\
-苗博雅 MiaoPoya & 189 & 1.00\% \\* \bottomrule
-\iffalse
+苗博雅 MiaoPoya & 189 & 1.00\% \\
 徐永明 & 186 & 0.98\% \\
 趙正宇 & 185 & 0.98\% \\
 小聖蚊的治國日記 & 184 & 0.97\% \\
@@ -577,9 +578,56 @@ nagee & 96 & 0.51\% \\
 民進黨台灣民主學院 & 3 & 0.02\% \\
 顧立雄 & 2 & 0.01\% \\
 Tumorectomy Project 割腫瘤計畫 & 1 & 0.01\% \\
-台大法律學生挺318 & 1 & 0.01\% \\* \bottomrule
+台大法律學生挺318 & 1 & 0.01\% \\
 \fi
-\end{longtable}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\columnwidth]{quantity_time_graph_ng}
+\caption{貼文數量對時間的關係圖}
+\label{f1}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.90\columnwidth]{quantity_time_cumulative_graph}
+\caption{累計貼文數量對時間的關係圖}
+\label{f2}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.82\columnwidth]{ts01}
+\includegraphics[width=.82\columnwidth]{ts02}
+\includegraphics[width=.82\columnwidth]{ts03}
+\caption{各時間點的熱門議題}
+\label{f5}
+\end{figure}
+
+\begin{figure}[!htbp]
+\ContinuedFloat
+\centering
+\includegraphics[width=.82\columnwidth]{ts04}
+\includegraphics[width=.82\columnwidth]{ts05}
+\includegraphics[width=.82\columnwidth]{ts06}
+\includegraphics[width=.82\columnwidth]{ts07}
+\caption{各時間點的熱門議題}
+\end{figure}
+
+\begin{figure}[!htbp]
+\ContinuedFloat
+\centering
+\includegraphics[width=.82\columnwidth]{ts09}
+\includegraphics[width=.82\columnwidth]{ts10}
+\includegraphics[width=.82\columnwidth]{ts11}
+\includegraphics[width=.82\columnwidth]{ts12}
+\caption{各時間點的熱門議題}
+\end{figure}
+
+\onecolumn
 
 \begin{longtable}[c]{@{}L{2.45cm}L{1.1cm}L{1.1cm}L{1.1cm}L{1.1cm}L{1.1cm}L{1.1cm}L{1.1cm}L{1.41cm}L{1.1cm}L{1.1cm}@{}}
 \caption{關鍵字擷取，依作者劃分{\small （限於篇幅，僅節錄部份資料）}}
@@ -935,18 +983,14 @@ Tumorectomy Project 割腫瘤計畫 & 0/0 (-) & 0/0 (-) & 0/0 (-) & 0/0 (-) & 0/
 
 \twocolumn
 
-\subsection*{關鍵字擷取（keyword extraction）}
-
-表 \ref{t2} 至表 \ref{t4} 是關鍵字擷取的結果，\#N 表示排名第 N 名的關鍵字。%
-表 \ref{t2} 是依作者劃分，表 \ref{t3} 是依時間劃分，表 \ref{t4} 則是合併了所有貼文。%
-本項分析的成果相當出色，從表 \ref{t2} 我們可以看出各政黨／侯選人／意見領袖重視的議題。%
-例如，「王丹网站 Wang Dan's Page」關注「中國」方面的議題，「中國國民黨 KMT」關注「朱立倫」、「經濟」、「兩岸」等事務，%
-「周芷萱　斬父權獨立劍　老娘就是反骨！」關注「女性」、「性別」等議題，「王金平」關注「國會」、「改革」等事務，%
-「綠黨」關注「勞工」、「環境」等議題，而「馬躍．比吼 Mayaw Biho」則關注「原住民」的「文化」和「土地」等等。%
-
 表 \ref{t3} 找出了每個時間區間最熱門的關鍵字分別是哪些，本研究以一週為一個時間區間。%
 透過此表，我們可以發現人們關注的焦點皆圍繞在「台灣」、「中國」、「國民黨」上，唯有在 11 月 1 日至 11 月 8 日間，%
 由於舉行兩岸領導人會面，「馬英九」、「馬習會」也躍升為社群網站上的討論焦點。%
+
+第二種分析方法的結果見圖 \ref{f5}，使用此方法能找出更多在不同時間發生的事件。%
+單詞的出現率的高峰不一定是在事件當天，%
+這是因為對於突發事件，可能要過一小段時間才會為眾人所知；%
+對於預先計劃好的事件，可能在事前就已廣泛地被討論。%
 
 表 \ref{t4} 告訴我們本次選舉人們最關心跟「台灣」和「中國」有關的議題，而「國民黨」也是人們討論的焦點。%
 值得一提的是，此次選舉的另一大黨，民主進步黨，並未出現在前十大關鍵字之中。%
@@ -957,16 +1001,18 @@ Tumorectomy Project 割腫瘤計畫 & 0/0 (-) & 0/0 (-) & 0/0 (-) & 0/0 (-) & 0/
 本項分析共有 948 筆訓練／測試貼文，經研究者手動標記後，%
 有 651 筆被標記為說服型競選，佔 68.67\%，有 297 筆被標記為攻擊型競選，佔 31.33\%。%
 圖 \ref{f3} 顯示訓練／測試貼文在所有貼文中確實是呈均勻分佈的。%
-圖中的每個點皆代表一筆訓練／測試貼文，點的位置代表它在所有貼文中的位置。紅點代表說服型競選，藍點代表攻擊型競選。%
+圖中的每個點皆代表一筆訓練／測試貼文，點的水平位置代表它在所有貼文中的位置。紅點代表說服型競選，藍點代表攻擊型競選。%
 
-\begin{figure}[!htbp]
+\begin{figure}[!tbp]
 \centering
 \includegraphics[width=\columnwidth]{meta}
 \caption{訓練／測試貼文的分佈圖}
 \label{f3}
 \end{figure}
 
-經交叉測試，本情感分類模型的正確率達 86.82\%。%
+由於攻擊型競選貼文的比例較低，而本項分析的目標便是要找出攻擊型競選貼文，故將攻擊型競選定義為陽性。%
+經測試，本情感分類模型的準確度（accuracy）為 86.82\%，查準率（precision）為 85.25\%，%
+查全率（recall）為 70.29\%，F 度量（F-measure）為 76.75\%。%
 表 \ref{t5} 是情感分析的結果，A/B (C\%) 表示該粉絲專頁在該時間區間一共有 B 筆貼文，其中有 A 筆是攻擊型競選，佔 C\%。%
 本項分析不計入無內文之貼文。%
 本研究發現，此次選舉只有 26.63\% 的社群媒體貼文是攻擊型競選，其餘貼文皆是說服型競選。%
@@ -995,20 +1041,62 @@ Tumorectomy Project 割腫瘤計畫 & 0/0 (-) & 0/0 (-) & 0/0 (-) & 0/0 (-) & 0/
 「Taiwan Fugue」較常分享自由時報（news.ltn.com.tw）及蘋果日報（www.appledaily.com.tw）的消息；%
 「白色正義聯盟」較常分享聯合新聞網（udn.com）的消息；「我是台灣人 (I am Taiwanese)」較常分享「綠黨」的消息等等。%
 
-\addtolength{\textheight}{-1.2cm} % This command serves to balance the column lengths
-                                  % on the last page of the document manually. It shortens
-                                  % the textheight of the last page by a suitable amount.
-                                  % This command does not take effect until the next page
-                                  % so it should come on the page before the last. Make
-                                  % sure that you do not shorten the textheight too much.
-
 另外，此圖也呈現出各政黨／侯選人／意見領袖之間的關係。%
 例如「苗博雅 MiaoPoya」、「呂欣潔 Jennifer Lu」和「大安推范雲」皆屬於同一個政黨，因此他們在圖中也屬於同一個社群。%
 同樣地，「白色正義聯盟」、「挺馬英九聯盟」和「藍白拖的逆襲」彼此有相近的政治立場，因此他們在圖中的位置也比較相近。%
 
-最後，從圖中圓點的大小，我們還可以看出哪些消息來源最常被人們引用。%
+表 \ref{t6} 和表 \ref{t7} 是 HITS 的分析結果。%
+從 HITS 的分析結果，或從圖 \ref{f4} 中圓點的大小，我們還可以看出哪些消息來源最常被人們引用。%
 在此次選舉中最常被人們引用的消息來源是 YouTube（www.youtube.com 或 youtu.be）、%
 自由時報（news.ltn.com.tw）、蘋果日報（www.appledaily.com.tw）和聯合新聞網（udn.com）等等。%
+
+\begin{table}[!tbp]
+\begin{minipage}[b]{.49\linewidth}
+  \centering
+  \caption{權威粉絲專頁排名}
+  \label{t6}
+  \begin{tabular}{@{}lc@{}}
+    \toprule
+    Label & Authority \\
+    \midrule
+    Taiwan Fugue & 0.245 \\
+    我是台灣人 (\dots & 0.194 \\
+    白色正義聯盟 & 0.173 \\
+    nagee & 0.171 \\
+    綠黨 & 0.166 \\
+    挺馬英九聯盟 & 0.164 \\
+    呂欣潔 Jennif\dots & 0.161 \\
+    民主鬥陣 De\dots & 0.158 \\
+    藍白拖的逆襲 & 0.155 \\
+    社會民主黨 & 0.154 \\
+    反馬英九聯盟 & 0.152 \\
+    \bottomrule
+  \end{tabular}
+\end{minipage}
+\hspace{.01\linewidth}
+\begin{minipage}[b]{.45\linewidth}
+  \centering
+  \caption{匯集網站排名}
+  \label{t7}
+  \begin{tabular}{@{}lc@{}}
+    \toprule
+    Label & Hub \\
+    \midrule
+    www.youtube.com & 0.324 \\
+    news.ltn.com.tw & 0.289 \\
+    www.appledaily\dots & 0.288 \\
+    udn.com & 0.277 \\
+    youtu.be & 0.263 \\
+    docs.google.com & 0.200 \\
+    www.setn.com & 0.196 \\
+    www.storm.mg & 0.194 \\
+    www.ettoday.net & 0.188 \\
+    www.chinatimes\dots & 0.188 \\
+    m.ltn.com.tw & 0.163 \\
+    \bottomrule
+  \end{tabular}
+\end{minipage}
+\end{table}
 
 從這裡我們或許也能看出各消息來源在使用者心中的可信度（credibility）。%
 一個消息來源會被一個使用者引用，通常就代表該使用者信任該消息來源。%
@@ -1050,6 +1138,13 @@ Tumorectomy Project 割腫瘤計畫 & 0/0 (-) & 0/0 (-) & 0/0 (-) & 0/0 (-) & 0/
 有您們的協助，這份研究才得以順利完成。%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\addtolength{\textheight}{-21cm} % This command serves to balance the column lengths
+                                  % on the last page of the document manually. It shortens
+                                  % the textheight of the last page by a suitable amount.
+                                  % This command does not take effect until the next page
+                                  % so it should come on the page before the last. Make
+                                  % sure that you do not shorten the textheight too much.
 
 \bibliographystyle{ieeetr}
 \bibliography{citation}
