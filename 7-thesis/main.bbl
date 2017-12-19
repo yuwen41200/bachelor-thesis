@@ -50,6 +50,11 @@ W.~McKinney, ``Data structures for statistical computing in {Python},'' in {\em
 J.~D. Hunter, ``Matplotlib: A {2D} graphics environment,'' {\em Computing In
   Science \& Engineering}, vol.~9, no.~3, pp.~90--95, 2007.
 
+\bibitem{c16}
+{Plotly}, ``Plotly: Plotly for {Python}.''
+  \url{https://plot.ly/d3-js-for-python-and-pandas-charts/}.
+\newblock Accessed: 2017-11-19.
+
 \bibitem{c11}
 {R. Wang (isnowfy)}, ``{SnowNLP}: Simplified chinese text processing.''
   \url{https://github.com/isnowfy/snownlp}.
@@ -60,6 +65,10 @@ R.~Mihalcea and P.~Tarau, ``{TextRank}: Bringing order into texts,'' in {\em
   Proceedings of the 2004 Conference on Empirical Methods in Natural Language
   Processing} (D.~Lin and D.~Wu, eds.), (Barcelona, Spain), pp.~404--411,
   Association for Computational Linguistics, July 2004.
+
+\bibitem{c17}
+謝明恩, 林立秦, 張逸群, and 蔡明娟, ``{P T T 軍情室},'' {\em
+  2016 Data Mining Final Project Slides}, no.~24, 2016.
 
 \bibitem{c13}
 C.~D. Manning, P.~Raghavan, and H.~Schütze, {\em Introduction to Information
